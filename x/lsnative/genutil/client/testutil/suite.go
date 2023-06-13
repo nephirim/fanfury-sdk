@@ -12,11 +12,11 @@ import (
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/testutil/network"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/client/cli"
-	stakingcli "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/client/cli"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/testutil/network"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/client/cli"
+	stakingcli "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/client/cli"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 type IntegrationTestSuite struct {

@@ -16,8 +16,8 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/keeper"
+	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/types"
 )
 
 var (

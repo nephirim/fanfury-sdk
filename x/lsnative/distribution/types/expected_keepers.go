@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 // AccountKeeper defines the expected account keeper used for simulations (noalias)

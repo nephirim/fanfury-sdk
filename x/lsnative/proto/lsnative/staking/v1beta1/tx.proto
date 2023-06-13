@@ -11,7 +11,7 @@ import "staking/v1beta1/staking.proto";
 
 import "cosmos/msg/v1/msg.proto";
 
-option go_package = "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types";
+option go_package = "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types";
 
 // Msg defines the staking Msg service.
 service Msg {

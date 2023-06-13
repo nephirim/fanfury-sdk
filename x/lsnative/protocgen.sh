@@ -36,7 +36,7 @@ cd ..
 # (cd testutil/testdata; buf generate)
 
 # move proto files to the right places
-cp -r proto/out/github.com/incubus-network/fanfury-sdk/v2/x/lsnative/* ./
+cp -r proto/out/github.com/persistenceOne/persistence-sdk/v2/x/lsnative/* ./
 rm -rf proto/out
 
 go mod tidy -compat=1.19

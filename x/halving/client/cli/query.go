@@ -10,7 +10,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/halving/types"
 	"github.com/spf13/cobra"
 )
 

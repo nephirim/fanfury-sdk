@@ -8,9 +8,9 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/testslashing"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/testslashing"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
 )
 
 func TestExportAndInitGenesis(t *testing.T) {

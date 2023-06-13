@@ -18,12 +18,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
-	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/simulation"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	furyappparams "github.com/persistenceOne/persistence-sdk/v2/furyapp/params"
+	distrtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/simulation"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 // TestWeightedOperations tests the weights of the operations.

@@ -30,9 +30,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
-	genutiltypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
+	genutiltypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/types"
+	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 var (

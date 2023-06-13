@@ -7,7 +7,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	gogotypes "github.com/gogo/protobuf/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 func (k Keeper) GetLastTokenizeShareRecordId(ctx sdk.Context) uint64 {

@@ -12,7 +12,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	mintTypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	paramsTypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/halving/types"
 	"github.com/tendermint/tendermint/libs/log"
 )
 

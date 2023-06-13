@@ -12,8 +12,8 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	furyapp "github.com/incubus-network/fanfury-sdk/v2/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	furyapp "github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 func checkValidator(t *testing.T, app *furyapp.FuryApp, addr sdk.ValAddress, expFound bool) types.Validator {

@@ -13,7 +13,7 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/helpers"
+	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp/helpers"
 )
 
 // SetupSimulation creates the config, db (levelDB), temporary directory and logger for

@@ -3,7 +3,7 @@ package keeper
 import (
 	context "context"
 	sdkslashing "github.com/cosmos/cosmos-sdk/x/slashing/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
 )
 
 type SdkMsgHandler interface {

@@ -1,6 +1,6 @@
 package v046
 
-import "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+import "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 
 // MigrateJSON accepts exported v0.43 x/stakinng genesis state and migrates it to
 // v0.46 x/staking genesis state. The migration includes:

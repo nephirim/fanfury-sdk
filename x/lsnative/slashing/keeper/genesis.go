@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
 )
 
 // InitGenesis initialize default parameters

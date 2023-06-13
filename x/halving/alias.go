@@ -6,8 +6,8 @@
 package halving
 
 import (
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/halving/keeper"
+	"github.com/persistenceOne/persistence-sdk/v2/x/halving/types"
 )
 
 const (

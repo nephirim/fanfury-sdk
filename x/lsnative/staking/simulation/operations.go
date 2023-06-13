@@ -10,9 +10,9 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	furyappparams "github.com/persistenceOne/persistence-sdk/v2/furyapp/params"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/keeper"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 // Simulation operation weights constants

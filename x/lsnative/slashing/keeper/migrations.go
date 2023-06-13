@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	v043 "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/migrations/v043"
+	v043 "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/migrations/v043"
 )
 
 // Migrator is a struct for handling in-place store migrations.

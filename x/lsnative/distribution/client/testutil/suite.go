@@ -15,9 +15,9 @@ import (
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/incubus-network/fanfury-sdk/v2/testutil/network"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/client/cli"
-	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/persistenceOne/persistence-sdk/v2/testutil/network"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/client/cli"
+	distrtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
 )
 
 type IntegrationTestSuite struct {

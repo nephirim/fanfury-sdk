@@ -11,8 +11,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/server"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/types"
 )
 
 const flagGenTxDir = "gentx-dir"

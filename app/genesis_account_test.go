@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/crypto"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp"
 )
 
 func TestSimGenesisAccountValidate(t *testing.T) {

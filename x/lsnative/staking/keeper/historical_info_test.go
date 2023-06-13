@@ -9,9 +9,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 // IsValSetSorted reports whether valset is sorted.

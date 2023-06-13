@@ -7,9 +7,9 @@ import (
 	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	slashingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	slashingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
+	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 

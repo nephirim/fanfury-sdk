@@ -9,7 +9,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
 )
 
 // generateSalt generates a random salt, size length/2,  as a HEX encoded string.

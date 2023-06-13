@@ -3,7 +3,7 @@ package furyapp
 import (
 	"github.com/cosmos/cosmos-sdk/std"
 
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/params"
+	furyappparams "github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp/params"
 )
 
 // MakeTestEncodingConfig creates an EncodingConfig for testing. This function

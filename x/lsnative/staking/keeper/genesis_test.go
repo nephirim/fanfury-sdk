@@ -12,9 +12,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 func bootstrapGenesisTest(t *testing.T, numAddrs int) (*furyapp.FuryApp, sdk.Context, []sdk.AccAddress) {

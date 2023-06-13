@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -12,8 +12,8 @@ import (
 	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	sdkdistr "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	"github.com/incubus-network/fanfury-sdk/v2/testutil/network"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/persistenceOne/persistence-sdk/v2/testutil/network"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
 )
 
 type GRPCQueryTestSuite struct {

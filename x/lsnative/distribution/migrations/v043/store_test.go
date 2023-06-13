@@ -10,9 +10,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	v042distribution "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/migrations/v042"
-	v043distribution "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/migrations/v043"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	v042distribution "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/migrations/v042"
+	v043distribution "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/migrations/v043"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
 )
 
 func TestStoreMigration(t *testing.T) {

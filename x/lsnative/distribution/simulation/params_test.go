@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/simulation"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/simulation"
 )
 
 func TestParamChanges(t *testing.T) {

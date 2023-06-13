@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkdistr "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
 )
 
 // DistributeFromFeePool distributes funds from the distribution module account to

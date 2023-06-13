@@ -11,7 +11,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/kv"
 	v042auth "github.com/cosmos/cosmos-sdk/x/auth/migrations/v042"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 // Staking params default values

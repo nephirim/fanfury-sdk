@@ -3,7 +3,7 @@ package keeper
 import (
 	context "context"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 type SdkMsgHandler interface {

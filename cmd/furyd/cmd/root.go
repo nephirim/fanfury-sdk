@@ -24,7 +24,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	"github.com/cosmos/cosmos-sdk/x/crisis"
-	genutilcli "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/client/cli"
+	genutilcli "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/client/cli"
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
 	tmcfg "github.com/tendermint/tendermint/config"
@@ -32,8 +32,8 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/params"
+	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp/params"
 )
 
 // NewRootCmd creates a new root command for furyd. It is called once in the

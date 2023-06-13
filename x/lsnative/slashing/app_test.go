@@ -15,9 +15,9 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	sdkslashing "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
 )
 
 var (

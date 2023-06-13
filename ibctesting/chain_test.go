@@ -7,7 +7,7 @@ import (
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/stretchr/testify/require"
 
-	ibctesting "github.com/incubus-network/fanfury-sdk/v2/ibctesting"
+	ibctesting "github.com/persistenceOne/persistence-sdk/v2/ibctesting"
 )
 
 func TestChangeValSet(t *testing.T) {

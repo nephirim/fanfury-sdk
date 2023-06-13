@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

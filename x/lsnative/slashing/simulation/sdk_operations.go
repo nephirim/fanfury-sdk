@@ -10,11 +10,11 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 	sdkslashing "github.com/cosmos/cosmos-sdk/x/slashing/types"
-	"github.com/incubus-network/fanfury-sdk/v2/furyapp/helpers"
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
-	stakingkeeper "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
+	"github.com/persistenceOne/persistence-sdk/v2/furyapp/helpers"
+	furyappparams "github.com/persistenceOne/persistence-sdk/v2/furyapp/params"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/keeper"
+	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	stakingkeeper "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/keeper"
 )
 
 // SdkWeightedOperations returns all the operations from the module with their respective weights

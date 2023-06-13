@@ -1,7 +1,7 @@
 syntax = "proto3";
 package lsnative.staking.v1beta1;
 
-option go_package = "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types";
+option go_package = "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types";
 
 import "gogoproto/gogo.proto";
 import "staking/v1beta1/staking.proto";

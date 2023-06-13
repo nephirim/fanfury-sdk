@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/furyd/cmd"
+	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp"
+	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp/furyd/cmd"
 )
 
 func main() {
