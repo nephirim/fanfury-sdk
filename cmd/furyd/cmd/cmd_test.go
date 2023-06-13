@@ -15,7 +15,7 @@ import (
 func TestInitCmd(t *testing.T) {
 	rootCmd, _ := cmd.NewRootCmd()
 	rootCmd.SetArgs([]string{
-		"init",        // Test the init cmd
+		"init",         // Test the init cmd
 		"furyapp-test", // Moniker
 		fmt.Sprintf("--%s=%s", cli.FlagOverwrite, "true"), // Overwrite genesis.json, in case it already exists
 	})

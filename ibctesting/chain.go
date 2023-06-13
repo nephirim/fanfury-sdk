@@ -31,8 +31,8 @@ import (
 	"github.com/cosmos/ibc-go/v6/modules/core/exported"
 	"github.com/cosmos/ibc-go/v6/modules/core/types"
 	ibctmtypes "github.com/cosmos/ibc-go/v6/modules/light-clients/07-tendermint/types"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 )
 
 var MaxAccounts = 10

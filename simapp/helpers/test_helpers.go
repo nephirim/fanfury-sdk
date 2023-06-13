@@ -14,7 +14,7 @@ import (
 // FuryAppChainID hardcoded chainID for simulation
 const (
 	DefaultGenTxGas = 10000000
-	FuryAppChainID   = "simulation-app"
+	FuryAppChainID  = "simulation-app"
 )
 
 // GenSignedMockTx generates a signed mock transaction.

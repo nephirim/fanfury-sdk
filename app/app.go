@@ -109,10 +109,10 @@ import (
 	porttypes "github.com/cosmos/ibc-go/v6/modules/core/05-port/types"
 	ibchost "github.com/cosmos/ibc-go/v6/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v6/modules/core/keeper"
-	ibcmock "github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 	furyappparams "github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/params"
 	furyappupgrades "github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/upgrades"
 	v6 "github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/upgrades/v6"
+	ibcmock "github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 	ibctestingtypes "github.com/incubus-network/fanfury-sdk/v2/ibctesting/types"
 )
 

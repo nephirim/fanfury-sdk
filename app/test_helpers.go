@@ -31,8 +31,8 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/helpers"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 )
 
 // DefaultConsensusParams defines the default Tendermint consensus params used in

@@ -6,8 +6,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/suite"
 
-	ibctesting "github.com/incubus-network/fanfury-sdk/v2/ibctesting"
 	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	ibctesting "github.com/incubus-network/fanfury-sdk/v2/ibctesting"
 	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery"
 	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
 	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"

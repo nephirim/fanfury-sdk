@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting"
 	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting"
 	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
 	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"
 	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
