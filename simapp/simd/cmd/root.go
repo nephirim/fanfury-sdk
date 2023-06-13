@@ -32,7 +32,7 @@ import (
 	"github.com/persistenceOne/persistence-sdk/v2/simapp/params"
 )
 
-// NewRootCmd creates a new root command for simd. It is called once in the
+// NewRootCmd creates a new root command for furyd. It is called once in the
 // main function.
 func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
@@ -47,7 +47,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 		WithViper("") // In simapp, we don't use any prefix for env variables.
 
 	rootCmd := &cobra.Command{
-		Use:   "simd",
+		Use:   "furyd",
 		Short: "simulation app",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs

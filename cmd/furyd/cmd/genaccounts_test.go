@@ -17,7 +17,7 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 
 	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp"
-	simcmd "github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp/simd/cmd"
+	simcmd "github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp/furyd/cmd"
 )
 
 var testMbm = module.NewBasicManager(genutil.AppModuleBasic{})

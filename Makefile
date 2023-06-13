@@ -54,7 +54,7 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 # process linker flags
 
 ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=sim \
-		  -X github.com/cosmos/cosmos-sdk/version.AppName=simd \
+		  -X github.com/cosmos/cosmos-sdk/version.AppName=furyd \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
@@ -116,33 +116,33 @@ $(BUILD_TARGETS): go.sum $(BUILDDIR)/
 $(BUILDDIR)/:
 	mkdir -p $(BUILDDIR)/
 
-build-simd-all: go.sum
+build-furyd-all: go.sum
 	$(DOCKER) rm latest-build || true
 	$(DOCKER) run --volume=$(CURDIR):/sources:ro \
         --env TARGET_PLATFORMS='linux/amd64 darwin/amd64 linux/arm64 windows/amd64' \
-        --env APP=simd \
+        --env APP=furyd \
         --env VERSION=$(VERSION) \
         --env COMMIT=$(COMMIT) \
         --env LEDGER_ENABLED=$(LEDGER_ENABLED) \
         --name latest-build cosmossdk/rbuilder:latest
 	$(DOCKER) cp -a latest-build:/home/builder/artifacts/ $(CURDIR)/
 
-build-simd-linux: go.sum $(BUILDDIR)/
+build-furyd-linux: go.sum $(BUILDDIR)/
 	$(DOCKER) rm latest-build || true
 	$(DOCKER) run --volume=$(CURDIR):/sources:ro \
         --env TARGET_PLATFORMS='linux/amd64' \
-        --env APP=simd \
+        --env APP=furyd \
         --env VERSION=$(VERSION) \
         --env COMMIT=$(COMMIT) \
         --env LEDGER_ENABLED=false \
         --name latest-build cosmossdk/rbuilder:latest
 	$(DOCKER) cp -a latest-build:/home/builder/artifacts/ $(CURDIR)/
-	cp artifacts/simd-*-linux-amd64 $(BUILDDIR)/simd
+	cp artifacts/furyd-*-linux-amd64 $(BUILDDIR)/furyd
 
 cosmovisor:
 	$(MAKE) -C cosmovisor cosmovisor
 
-.PHONY: build build-linux build-simd-all build-simd-linux cosmovisor
+.PHONY: build build-linux build-furyd-all build-furyd-linux cosmovisor
 
 mockgen_cmd=go run github.com/golang/mock/mockgen
 
@@ -216,8 +216,8 @@ test-sim-nondeterminism:
 
 test-sim-custom-genesis-fast:
 	@echo "Running custom genesis simulation..."
-	@echo "By default, ${HOME}/.simd/config/genesis.json will be used."
-	@go test -mod=readonly $(SIMAPP) -run TestFullAppSimulation -Genesis=${HOME}/.simd/config/genesis.json \
+	@echo "By default, ${HOME}/.furyd/config/genesis.json will be used."
+	@go test -mod=readonly $(SIMAPP) -run TestFullAppSimulation -Genesis=${HOME}/.furyd/config/genesis.json \
 		-Enabled=true -NumBlocks=100 -BlockSize=200 -Commit=true -Seed=99 -Period=5 -v -timeout 24h
 
 test-sim-import-export: runsim
@@ -230,8 +230,8 @@ test-sim-after-import: runsim
 
 test-sim-custom-genesis-multi-seed: runsim
 	@echo "Running multi-seed custom genesis simulation..."
-	@echo "By default, ${HOME}/.simd/config/genesis.json will be used."
-	@$(BINDIR)/runsim -Genesis=${HOME}/.simd/config/genesis.json -SimAppPkg=$(SIMAPP) 400 5 TestFullAppSimulation
+	@echo "By default, ${HOME}/.furyd/config/genesis.json will be used."
+	@$(BINDIR)/runsim -Genesis=${HOME}/.furyd/config/genesis.json -SimAppPkg=$(SIMAPP) 400 5 TestFullAppSimulation
 
 test-sim-multi-seed-long: runsim
 	@echo "Running long multi-seed application simulation. This may take awhile!"

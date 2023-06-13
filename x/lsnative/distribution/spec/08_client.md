@@ -13,7 +13,7 @@ A user can query and interact with the `distribution` module using the CLI.
 The `query` commands allow users to query `distribution` state.
 
 ```sh
-simd query distribution --help
+furyd query distribution --help
 ```
 
 #### commission
@@ -21,13 +21,13 @@ simd query distribution --help
 The `commission` command allows users to query validator commission rewards by address.
 
 ```sh
-simd query distribution commission [address] [flags]
+furyd query distribution commission [address] [flags]
 ```
 
 Example:
 
 ```sh
-simd query distribution commission cosmosvaloper1..
+furyd query distribution commission cosmosvaloper1..
 ```
 
 Example Output:
@@ -43,13 +43,13 @@ commission:
 The `community-pool` command allows users to query all coin balances within the community pool.
 
 ```sh
-simd query distribution community-pool [flags]
+furyd query distribution community-pool [flags]
 ```
 
 Example:
 
 ```sh
-simd query distribution community-pool
+furyd query distribution community-pool
 ```
 
 Example Output:
@@ -65,13 +65,13 @@ pool:
 The `params` command allows users to query the parameters of the `distribution` module.
 
 ```sh
-simd query distribution params [flags]
+furyd query distribution params [flags]
 ```
 
 Example:
 
 ```sh
-simd query distribution params
+furyd query distribution params
 ```
 
 Example Output:
@@ -88,13 +88,13 @@ withdraw_addr_enabled: true
 The `rewards` command allows users to query delegator rewards. Users can optionally include the validator address to query rewards earned from a specific validator.
 
 ```sh
-simd query distribution rewards [delegator-addr] [validator-addr] [flags]
+furyd query distribution rewards [delegator-addr] [validator-addr] [flags]
 ```
 
 Example:
 
 ```sh
-simd query distribution rewards cosmos1..
+furyd query distribution rewards cosmos1..
 ```
 
 Example Output:
@@ -115,13 +115,13 @@ total:
 The `slashes` command allows users to query all slashes for a given block range.
 
 ```sh
-simd query distribution slashes [validator] [start-height] [end-height] [flags]
+furyd query distribution slashes [validator] [start-height] [end-height] [flags]
 ```
 
 Example:
 
 ```sh
-simd query distribution slashes cosmosvaloper1.. 1 1000
+furyd query distribution slashes cosmosvaloper1.. 1 1000
 ```
 
 Example Output:
@@ -140,13 +140,13 @@ slashes:
 The `validator-outstanding-rewards` command allows users to query all outstanding (un-withdrawn) rewards for a validator and all their delegations.
 
 ```sh
-simd query distribution validator-outstanding-rewards [validator] [flags]
+furyd query distribution validator-outstanding-rewards [validator] [flags]
 ```
 
 Example:
 
 ```sh
-simd query distribution validator-outstanding-rewards cosmosvaloper1..
+furyd query distribution validator-outstanding-rewards cosmosvaloper1..
 ```
 
 Example Output:
@@ -162,7 +162,7 @@ rewards:
 The `tx` commands allow users to interact with the `distribution` module.
 
 ```sh
-simd tx distribution --help
+furyd tx distribution --help
 ```
 
 #### fund-community-pool
@@ -170,13 +170,13 @@ simd tx distribution --help
 The `fund-community-pool` command allows users to send funds to the community pool.
 
 ```sh
-simd tx distribution fund-community-pool [amount] [flags]
+furyd tx distribution fund-community-pool [amount] [flags]
 ```
 
 Example:
 
 ```sh
-simd tx distribution fund-community-pool 100stake --from cosmos1..
+furyd tx distribution fund-community-pool 100stake --from cosmos1..
 ```
 
 #### set-withdraw-addr
@@ -184,13 +184,13 @@ simd tx distribution fund-community-pool 100stake --from cosmos1..
 The `set-withdraw-addr` command allows users to set the withdraw address for rewards associated with a delegator address.
 
 ```sh
-simd tx distribution set-withdraw-addr [withdraw-addr] [flags]
+furyd tx distribution set-withdraw-addr [withdraw-addr] [flags]
 ```
 
 Example:
 
 ```sh
-simd tx distribution set-withdraw-addr cosmos1.. --from cosmos1..
+furyd tx distribution set-withdraw-addr cosmos1.. --from cosmos1..
 ```
 
 #### withdraw-all-rewards
@@ -198,13 +198,13 @@ simd tx distribution set-withdraw-addr cosmos1.. --from cosmos1..
 The `withdraw-all-rewards` command allows users to withdraw all rewards for a delegator.
 
 ```sh
-simd tx distribution withdraw-all-rewards [flags]
+furyd tx distribution withdraw-all-rewards [flags]
 ```
 
 Example:
 
 ```sh
-simd tx distribution withdraw-all-rewards --from cosmos1..
+furyd tx distribution withdraw-all-rewards --from cosmos1..
 ```
 
 #### withdraw-rewards
@@ -213,13 +213,13 @@ The `withdraw-rewards` command allows users to withdraw all rewards from a given
 and optionally withdraw validator commission if the delegation address given is a validator operator and the user proves the `--commision` flag.
 
 ```sh
-simd tx distribution withdraw-rewards [validator-addr] [flags]
+furyd tx distribution withdraw-rewards [validator-addr] [flags]
 ```
 
 Example:
 
 ```sh
-simd tx distribution withdraw-rewards cosmosvaloper1.. --from cosmos1.. --commision
+furyd tx distribution withdraw-rewards cosmosvaloper1.. --from cosmos1.. --commision
 ```
 
 ## gRPC

@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp/simd/cmd"
+	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp/furyd/cmd"
 )
 
 func TestInitCmd(t *testing.T) {
@@ -20,5 +20,5 @@ func TestInitCmd(t *testing.T) {
 		fmt.Sprintf("--%s=%s", cli.FlagOverwrite, "true"), // Overwrite genesis.json, in case it already exists
 	})
 
-	require.NoError(t, svrcmd.Execute(rootCmd, "simd", simapp.DefaultNodeHome))
+	require.NoError(t, svrcmd.Execute(rootCmd, "furyd", simapp.DefaultNodeHome))
 }

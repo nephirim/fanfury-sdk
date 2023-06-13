@@ -11,7 +11,7 @@ A user can query and interact with the `slashing` module using the CLI.
 The `query` commands allow users to query `slashing` state.
 
 ```sh
-simd query slashing --help
+furyd query slashing --help
 ```
 
 ### params
@@ -19,13 +19,13 @@ simd query slashing --help
 The `params` command allows users to query genesis parameters for the slashing module.
 
 ```sh
-simd query slashing params [flags]
+furyd query slashing params [flags]
 ```
 
 Example:
 
 ```sh
-simd query slashing params
+furyd query slashing params
 ```
 
 Example Output:
@@ -43,13 +43,13 @@ slash_fraction_downtime: "0.010000000000000000"
 The `signing-info` command allows users to query signing-info of the validator using consensus public key.
 
 ```sh
-simd query slashing signing-infos [flags]
+furyd query slashing signing-infos [flags]
 ```
 
 Example:
 
 ```sh
-simd query slashing signing-info '{"@type":"/cosmos.crypto.ed25519.PubKey","key":"Auxs3865HpB/EfssYOzfqNhEJjzys6jD5B6tPgC8="}'
+furyd query slashing signing-info '{"@type":"/cosmos.crypto.ed25519.PubKey","key":"Auxs3865HpB/EfssYOzfqNhEJjzys6jD5B6tPgC8="}'
 
 ```
 
@@ -69,13 +69,13 @@ tombstoned: false
 The `signing-infos` command allows users to query signing infos of all validators.
 
 ```sh
-simd query slashing signing-infos [flags]
+furyd query slashing signing-infos [flags]
 ```
 
 Example:
 
 ```sh
-simd query slashing signing-infos
+furyd query slashing signing-infos
 ```
 
 Example Output:
@@ -98,7 +98,7 @@ pagination:
 The `tx` commands allow users to interact with the `slashing` module.
 
 ```bash
-simd tx slashing --help
+furyd tx slashing --help
 ```
 
 ### unjail
@@ -106,13 +106,13 @@ simd tx slashing --help
 The `unjail` command allows users to unjail a validator previously jailed for downtime.
 
 ```bash
-  simd tx slashing unjail --from mykey [flags]
+  furyd tx slashing unjail --from mykey [flags]
 ```
 
 Example:
 
 ```bash
-simd tx slashing unjail --from mykey
+furyd tx slashing unjail --from mykey
 ```
 
 ## gRPC

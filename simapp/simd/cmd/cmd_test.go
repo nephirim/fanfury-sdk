@@ -8,7 +8,7 @@ import (
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp/simd/cmd"
+	"github.com/persistenceOne/persistence-sdk/v2/simapp/furyd/cmd"
 	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/client/cli"
 )
 
