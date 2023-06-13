@@ -53,7 +53,7 @@ type TestingApp interface {
 	GetScopedIBCKeeper() capabilitykeeper.ScopedKeeper
 	GetTxConfig() client.TxConfig
 
-	// Implemented by SimApp
+	// Implemented by FuryApp
 	AppCodec() codec.Codec
 
 	// Implemented by BaseApp
@@ -66,30 +66,30 @@ To begin, you will need to extend your application by adding the following funct
 
 ```go
 // TestingApp functions
-// Example using SimApp to implement TestingApp
+// Example using FuryApp to implement TestingApp
 
 // GetBaseApp implements the TestingApp interface.
-func (app *SimApp) GetBaseApp() *baseapp.BaseApp {
+func (app *FuryApp) GetBaseApp() *baseapp.BaseApp {
 	return app.BaseApp
 }
 
 // GetStakingKeeper implements the TestingApp interface.
-func (app *SimApp) GetStakingKeeper() stakingkeeper.Keeper {
+func (app *FuryApp) GetStakingKeeper() stakingkeeper.Keeper {
 	return app.StakingKeeper
 }
 
 // GetIBCKeeper implements the TestingApp interface.
-func (app *SimApp) GetIBCKeeper() *ibckeeper.Keeper {
+func (app *FuryApp) GetIBCKeeper() *ibckeeper.Keeper {
 	return app.IBCKeeper
 }
 
 // GetScopedIBCKeeper implements the TestingApp interface.
-func (app *SimApp) GetScopedIBCKeeper() capabilitykeeper.ScopedKeeper {
+func (app *FuryApp) GetScopedIBCKeeper() capabilitykeeper.ScopedKeeper {
 	return app.ScopedIBCKeeper
 }
 
 // GetTxConfig implements the TestingApp interface.
-func (app *SimApp) GetTxConfig() client.TxConfig {
+func (app *FuryApp) GetTxConfig() client.TxConfig {
 	return MakeTestEncodingConfig().TxConfig
 }
 
@@ -98,11 +98,11 @@ func (app *SimApp) GetTxConfig() client.TxConfig {
 Your application may need to define `AppCodec()` if it does not already exist:
 
 ```go
-// AppCodec returns SimApp's app codec.
+// AppCodec returns FuryApp's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *SimApp) AppCodec() codec.Codec {
+func (app *FuryApp) AppCodec() codec.Codec {
 	return app.appCodec
 }
 ```
@@ -111,14 +111,14 @@ It is assumed your application contains an embedded BaseApp and thus implements 
 
 ### Initialize TestingApp
 
-The testing package requires that you provide a function to initialize your TestingApp. This is how ibc-go implements the initialize function with its `SimApp`:
+The testing package requires that you provide a function to initialize your TestingApp. This is how ibc-go implements the initialize function with its `FuryApp`:
 
 ```go
 func SetupTestingApp() (TestingApp, map[string]json.RawMessage) {
 	db := dbm.NewMemDB()
-	encCdc := simapp.MakeTestEncodingConfig()
-	app := simapp.NewSimApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, simapp.DefaultNodeHome, 5, encCdc, simapp.EmptyAppOptions{})
-	return app, simapp.NewDefaultGenesisState(encCdc.Marshaler)
+	encCdc := furyapp.MakeTestEncodingConfig()
+	app := furyapp.NewFuryApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, furyapp.DefaultNodeHome, 5, encCdc, furyapp.EmptyAppOptions{})
+	return app, furyapp.NewDefaultGenesisState(encCdc.Marshaler)
 }
 ```
 
@@ -244,7 +244,7 @@ Here is a basic example of the testing package being used to simulate IBC functi
 
 ### Transfer Testing Example
 
-If ICS 20 had its own simapp, its testing setup might include a `testing/app.go` file with the following contents:
+If ICS 20 had its own furyapp, its testing setup might include a `testing/app.go` file with the following contents:
 
 ```go
 package transfertesting
@@ -255,15 +255,15 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/cosmos/ibc-go/v6/modules/apps/transfer/simapp"
-	ibctesting "github.com/persistenceOne/persistence-sdk/v2/ibctesting"
+	"github.com/cosmos/ibc-go/v6/modules/apps/transfer/furyapp"
+	ibctesting "github.com/incubus-network/fanfury-sdk/v2/ibctesting"
 )
 
 func SetupTransferTestingApp() (ibctesting.TestingApp, map[string]json.RawMessage) {
 	db := dbm.NewMemDB()
-	encCdc := simapp.MakeTestEncodingConfig()
-	app := simapp.NewSimApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, simapp.DefaultNodeHome, 5, encCdc, simapp.EmptyAppOptions{})
-	return app, simapp.NewDefaultGenesisState(encCdc.Marshaler)
+	encCdc := furyapp.MakeTestEncodingConfig()
+	app := furyapp.NewFuryApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, furyapp.DefaultNodeHome, 5, encCdc, furyapp.EmptyAppOptions{})
+	return app, furyapp.NewDefaultGenesisState(encCdc.Marshaler)
 }
 
 func init() {
@@ -278,8 +278,8 @@ func NewTransferPath(chainA, chainB *ibctesting.TestChain) *ibctesting.Path {
 	return path
 }
 
-func GetTransferSimApp(chain *ibctesting.TestChain) *simapp.SimApp {
-	app, ok := chain.App.(*simapp.SimApp)
+func GetTransferFuryApp(chain *ibctesting.TestChain) *furyapp.FuryApp {
+	app, ok := chain.App.(*furyapp.FuryApp)
 	if !ok {
 		panic("not transfer app")
 	}
@@ -305,13 +305,13 @@ mockModule.IBCApp.OnChanOpenTry = func(ctx sdk.Context, portID, channelID, versi
 }
 ```
 
-Using a mock module as a base application in a middleware stack may require adding the module to your `SimApp`. 
+Using a mock module as a base application in a middleware stack may require adding the module to your `FuryApp`. 
 This is because IBC will route to the top level IBC module of a middleware stack, so a module which never
-sits at the top of middleware stack will need to be accessed via a public field in `SimApp`
+sits at the top of middleware stack will need to be accessed via a public field in `FuryApp`
 
 This might look like:
 ```go
-suite.chainA.GetSimApp().ICAAuthModule.IBCApp.OnChanOpenInit = func(
+suite.chainA.GetFuryApp().ICAAuthModule.IBCApp.OnChanOpenInit = func(
 	ctx sdk.Context, order channeltypes.Order, connectionHops []string,
 	portID, channelID string, chanCap *capabilitytypes.Capability,
 	counterparty channeltypes.Counterparty, version string,

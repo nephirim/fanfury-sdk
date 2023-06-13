@@ -11,7 +11,7 @@ import (
 
 	simulationTypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/x/halving/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/halving/types"
 )
 
 const (

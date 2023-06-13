@@ -1,4 +1,4 @@
-package simapp
+package furyapp
 
 import (
 	abci "github.com/tendermint/tendermint/abci/types"

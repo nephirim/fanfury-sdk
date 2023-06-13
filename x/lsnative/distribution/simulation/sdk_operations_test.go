@@ -10,11 +10,11 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
 	sdkdistr "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	simappparams "github.com/persistenceOne/persistence-sdk/v2/simapp/params"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	distrtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/simulation"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // TestSdkWeightedOperations tests the weights of the operations.
@@ -36,10 +36,10 @@ func (suite *SimTestSuite) TestSdkWeightedOperations() {
 		opMsgRoute string
 		opMsgName  string
 	}{
-		{simappparams.DefaultWeightMsgSetWithdrawAddress, sdkdistr.ModuleName, sdkdistr.TypeMsgSetWithdrawAddress},
-		{simappparams.DefaultWeightMsgWithdrawDelegationReward, sdkdistr.ModuleName, sdkdistr.TypeMsgWithdrawDelegatorReward},
-		{simappparams.DefaultWeightMsgWithdrawValidatorCommission, sdkdistr.ModuleName, sdkdistr.TypeMsgWithdrawValidatorCommission},
-		{simappparams.DefaultWeightMsgFundCommunityPool, sdkdistr.ModuleName, sdkdistr.TypeMsgFundCommunityPool},
+		{furyappparams.DefaultWeightMsgSetWithdrawAddress, sdkdistr.ModuleName, sdkdistr.TypeMsgSetWithdrawAddress},
+		{furyappparams.DefaultWeightMsgWithdrawDelegationReward, sdkdistr.ModuleName, sdkdistr.TypeMsgWithdrawDelegatorReward},
+		{furyappparams.DefaultWeightMsgWithdrawValidatorCommission, sdkdistr.ModuleName, sdkdistr.TypeMsgWithdrawValidatorCommission},
+		{furyappparams.DefaultWeightMsgFundCommunityPool, sdkdistr.ModuleName, sdkdistr.TypeMsgFundCommunityPool},
 	}
 
 	for i, w := range weightesOps {

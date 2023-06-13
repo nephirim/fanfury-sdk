@@ -6,16 +6,16 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/suite"
 
-	ibctesting "github.com/persistenceOne/persistence-sdk/v2/ibctesting"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery"
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	ibctesting "github.com/incubus-network/fanfury-sdk/v2/ibctesting"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func init() {
-	ibctesting.DefaultTestingAppInit = simapp.SetupTestingApp
+	ibctesting.DefaultTestingAppInit = furyapp.SetupTestingApp
 }
 
 func TestInterChainQueryTestSuite(t *testing.T) {
@@ -32,8 +32,8 @@ type InterChainQueryTestSuite struct {
 	path   *ibctesting.Path
 }
 
-func (suite *InterChainQueryTestSuite) GetSimApp(chain *ibctesting.TestChain) *simapp.SimApp {
-	app, ok := chain.App.(*simapp.SimApp)
+func (suite *InterChainQueryTestSuite) GetFuryApp(chain *ibctesting.TestChain) *furyapp.FuryApp {
+	app, ok := chain.App.(*furyapp.FuryApp)
 	if !ok {
 		panic("not sim app")
 	}
@@ -46,7 +46,7 @@ func (suite *InterChainQueryTestSuite) SetupTest() {
 	suite.chainA = suite.coordinator.GetChain(ibctesting.GetChainID(1))
 	suite.chainB = suite.coordinator.GetChain(ibctesting.GetChainID(2))
 
-	suite.path = newSimAppPath(suite.chainA, suite.chainB)
+	suite.path = newFuryAppPath(suite.chainA, suite.chainB)
 	suite.coordinator.SetupConnections(suite.path)
 }
 
@@ -55,7 +55,7 @@ func (suite *InterChainQueryTestSuite) TestInitGenesis() {
 	bz, err := bondedQuery.Marshal()
 	suite.NoError(err)
 
-	query := suite.GetSimApp(suite.chainA).InterchainQueryKeeper.NewQuery(
+	query := suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.NewQuery(
 		suite.chainA.GetContext(),
 		"",
 		suite.path.EndpointB.ConnectionID,
@@ -67,10 +67,10 @@ func (suite *InterChainQueryTestSuite) TestInitGenesis() {
 		0,
 	)
 
-	interchainquery.InitGenesis(suite.chainA.GetContext(), suite.GetSimApp(suite.chainA).InterchainQueryKeeper, types.GenesisState{Queries: []types.Query{*query}})
+	interchainquery.InitGenesis(suite.chainA.GetContext(), suite.GetFuryApp(suite.chainA).InterchainQueryKeeper, types.GenesisState{Queries: []types.Query{*query}})
 
 	id := keeper.GenerateQueryHash(suite.path.EndpointB.ConnectionID, suite.chainB.ChainID, "cosmos.staking.v1beta1.Query/Validators", bz, "")
-	queryResponse, found := suite.GetSimApp(suite.chainA).InterchainQueryKeeper.GetQuery(suite.chainA.GetContext(), id)
+	queryResponse, found := suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.GetQuery(suite.chainA.GetContext(), id)
 	suite.True(found)
 	suite.Equal(suite.path.EndpointB.ConnectionID, queryResponse.ConnectionId)
 	suite.Equal(suite.chainB.ChainID, queryResponse.ChainId)
@@ -80,7 +80,7 @@ func (suite *InterChainQueryTestSuite) TestInitGenesis() {
 	suite.Equal("", queryResponse.CallbackId)
 }
 
-func newSimAppPath(chainA, chainB *ibctesting.TestChain) *ibctesting.Path {
+func newFuryAppPath(chainA, chainB *ibctesting.TestChain) *ibctesting.Path {
 	path := ibctesting.NewPath(chainA, chainB)
 	path.EndpointA.ChannelConfig.PortID = ibctesting.TransferPort
 	path.EndpointB.ChannelConfig.PortID = ibctesting.TransferPort

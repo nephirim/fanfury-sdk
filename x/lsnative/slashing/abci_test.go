@@ -10,18 +10,18 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
 )
 
 func TestBeginBlocker(t *testing.T) {
-	app := simapp.Setup(t, false)
+	app := furyapp.Setup(t, false)
 	ctx := app.BaseApp.NewContext(false, tmproto.Header{})
 
-	pks := simapp.CreateTestPubKeys(1)
-	simapp.AddTestAddrsFromPubKeys(app, ctx, pks, app.StakingKeeper.TokensFromConsensusPower(ctx, 200))
+	pks := furyapp.CreateTestPubKeys(1)
+	furyapp.AddTestAddrsFromPubKeys(app, ctx, pks, app.StakingKeeper.TokensFromConsensusPower(ctx, 200))
 	addr, pk := sdk.ValAddress(pks[0].Address()), pks[0]
 	tstaking := teststaking.NewHelper(t, ctx, app.StakingKeeper)
 

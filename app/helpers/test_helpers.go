@@ -15,8 +15,8 @@ import (
 // DefaultGenTxGas default gas for tx simulation
 var DefaultGenTxGas = uint64(1000000)
 
-// SimAppChainID hardcoded chainID for simulation
-const SimAppChainID = "simulation-app"
+// FuryAppChainID hardcoded chainID for simulation
+const FuryAppChainID = "simulation-app"
 
 // GenTx generates a signed mock transaction.
 func GenTx(gen client.TxConfig, msgs []sdk.Msg, feeAmt sdk.Coins, gas uint64, chainID string, accNums, accSeqs []uint64, priv ...cryptotypes.PrivKey) (sdk.Tx, error) {

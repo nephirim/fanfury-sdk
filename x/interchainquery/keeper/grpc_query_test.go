@@ -2,9 +2,9 @@ package keeper_test
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 
-	icqtypes "github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/types"
+	icqtypes "github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"
 )
 
 func (suite *KeeperTestSuite) TestQueries() {
@@ -12,7 +12,7 @@ func (suite *KeeperTestSuite) TestQueries() {
 	bz, err := bondedQuery.Marshal()
 	suite.NoError(err)
 
-	query := suite.GetSimApp(suite.chainA).InterchainQueryKeeper.NewQuery(
+	query := suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.NewQuery(
 		suite.chainA.GetContext(),
 		"",
 		suite.path.EndpointB.ConnectionID,
@@ -25,9 +25,9 @@ func (suite *KeeperTestSuite) TestQueries() {
 	)
 
 	// set the query
-	suite.GetSimApp(suite.chainA).InterchainQueryKeeper.SetQuery(suite.chainA.GetContext(), *query)
+	suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.SetQuery(suite.chainA.GetContext(), *query)
 
-	icqsrvSrv := icqtypes.QuerySrvrServer(suite.GetSimApp(suite.chainA).InterchainQueryKeeper)
+	icqsrvSrv := icqtypes.QuerySrvrServer(suite.GetFuryApp(suite.chainA).InterchainQueryKeeper)
 
 	res, err := icqsrvSrv.Queries(sdk.WrapSDKContext(suite.chainA.GetContext()), &icqtypes.QueryRequestsRequest{ChainId: suite.chainB.ChainID})
 	suite.NoError(err)

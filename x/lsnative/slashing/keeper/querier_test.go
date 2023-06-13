@@ -9,14 +9,14 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
 	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/testslashing"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/testslashing"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 func TestNewQuerier(t *testing.T) {
-	app := simapp.Setup(t, false)
+	app := furyapp.Setup(t, false)
 	ctx := app.BaseApp.NewContext(false, tmproto.Header{})
 	app.SlashingKeeper.SetParams(ctx, testslashing.TestParams())
 	legacyQuerierCdc := codec.NewAminoCodec(app.LegacyAmino())
@@ -34,7 +34,7 @@ func TestNewQuerier(t *testing.T) {
 func TestQueryParams(t *testing.T) {
 	cdc := codec.NewLegacyAmino()
 	legacyQuerierCdc := codec.NewAminoCodec(cdc)
-	app := simapp.Setup(t, false)
+	app := furyapp.Setup(t, false)
 	ctx := app.BaseApp.NewContext(false, tmproto.Header{})
 	app.SlashingKeeper.SetParams(ctx, testslashing.TestParams())
 

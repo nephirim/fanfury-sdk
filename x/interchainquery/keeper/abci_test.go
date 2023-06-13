@@ -2,14 +2,14 @@ package keeper_test
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting"
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
 )
 
 func (suite *KeeperTestSuite) TestEndBlocker() {
-	validators := suite.GetSimApp(suite.chainB).StakingKeeper.GetBondedValidatorsByPower(suite.chainB.GetContext())
+	validators := suite.GetFuryApp(suite.chainB).StakingKeeper.GetBondedValidatorsByPower(suite.chainB.GetContext())
 
 	qvr := stakingtypes.QueryValidatorsResponse{
 		Validators: ibctesting.SdkValidatorsToValidators(validators),
@@ -21,7 +21,7 @@ func (suite *KeeperTestSuite) TestEndBlocker() {
 
 	id := keeper.GenerateQueryHash(suite.path.EndpointB.ConnectionID, suite.chainB.ChainID, "cosmos.staking.v1beta1.Query/Validators", bz, "")
 
-	query := suite.GetSimApp(suite.chainA).InterchainQueryKeeper.NewQuery(
+	query := suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.NewQuery(
 		suite.chainA.GetContext(),
 		"",
 		suite.path.EndpointB.ConnectionID,
@@ -34,26 +34,26 @@ func (suite *KeeperTestSuite) TestEndBlocker() {
 	)
 
 	// set the query
-	suite.GetSimApp(suite.chainA).InterchainQueryKeeper.SetQuery(suite.chainA.GetContext(), *query)
+	suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.SetQuery(suite.chainA.GetContext(), *query)
 
 	// call end blocker
-	suite.GetSimApp(suite.chainA).InterchainQueryKeeper.EndBlocker(suite.chainA.GetContext())
+	suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.EndBlocker(suite.chainA.GetContext())
 
-	err = suite.GetSimApp(suite.chainA).InterchainQueryKeeper.SetDatapointForID(
+	err = suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.SetDatapointForID(
 		suite.chainA.GetContext(),
 		id,
-		suite.GetSimApp(suite.chainB).AppCodec().MustMarshalJSON(&qvr),
+		suite.GetFuryApp(suite.chainB).AppCodec().MustMarshalJSON(&qvr),
 		sdk.NewInt(suite.chainB.CurrentHeader.Height),
 	)
 	suite.NoError(err)
 
-	dataPoint, err := suite.GetSimApp(suite.chainA).InterchainQueryKeeper.GetDatapointForID(suite.chainA.GetContext(), id)
+	dataPoint, err := suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.GetDatapointForID(suite.chainA.GetContext(), id)
 	suite.NoError(err)
 	suite.NotNil(dataPoint)
 
 	// set the query
-	suite.GetSimApp(suite.chainA).InterchainQueryKeeper.DeleteQuery(suite.chainA.GetContext(), id)
+	suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.DeleteQuery(suite.chainA.GetContext(), id)
 
 	// call end blocker
-	suite.GetSimApp(suite.chainA).InterchainQueryKeeper.EndBlocker(suite.chainA.GetContext())
+	suite.GetFuryApp(suite.chainA).InterchainQueryKeeper.EndBlocker(suite.chainA.GetContext())
 }

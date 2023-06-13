@@ -23,9 +23,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/version"
 	authclient "github.com/cosmos/cosmos-sdk/x/auth/client"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/client/cli"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/client/cli"
 )
 
 // GenTxCmd builds the application's gentx command.

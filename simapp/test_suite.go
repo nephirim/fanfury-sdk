@@ -1,4 +1,4 @@
-package simapp
+package furyapp
 
 import (
 	"time"
@@ -13,7 +13,7 @@ import (
 type KeeperTestHelper struct {
 	suite.Suite
 
-	App         *SimApp
+	App         *FuryApp
 	Ctx         sdk.Context
 	QueryHelper *baseapp.QueryServiceTestHelper
 	TestAccs    []sdk.AccAddress

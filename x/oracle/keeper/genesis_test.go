@@ -2,9 +2,9 @@ package keeper_test
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	simapp "github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
+	furyapp "github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 
@@ -14,7 +14,7 @@ var (
 )
 
 func (s *KeeperTestSuite) TestOracleExportGenesis() {
-	app := simapp.Setup(s.T(), false)
+	app := furyapp.Setup(s.T(), false)
 	ctx := app.BaseApp.NewContext(false, tmproto.Header{})
 
 	genesisState := oracle.ExportGenesis(ctx, app.OracleKeeper)

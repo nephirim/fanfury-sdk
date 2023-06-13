@@ -1,4 +1,4 @@
-package simapp
+package furyapp
 
 import (
 	"encoding/json"
@@ -13,7 +13,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/kv"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp/helpers"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp/helpers"
 )
 
 // SetupSimulation creates the config, db (levelDB), temporary directory and logger for
@@ -25,7 +25,7 @@ func SetupSimulation(dirPrefix, dbName string) (simtypes.Config, dbm.DB, string,
 	}
 
 	config := NewConfigFromFlags()
-	config.ChainID = helpers.SimAppChainID
+	config.ChainID = helpers.FuryAppChainID
 
 	var logger log.Logger
 	if FlagVerboseValue {

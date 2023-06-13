@@ -9,7 +9,7 @@ import (
 	v043gov "github.com/cosmos/cosmos-sdk/x/gov/migrations/v043"
 	gov "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
 )
 
 // Migrate migrates exported state from v0.40 to a v0.43 genesis state.

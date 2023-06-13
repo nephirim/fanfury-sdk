@@ -15,8 +15,8 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	capabilitykeeper "github.com/cosmos/cosmos-sdk/x/capability/keeper"
 	capabilitytypes "github.com/cosmos/cosmos-sdk/x/capability/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/crypto/tmhash"
@@ -31,8 +31,8 @@ import (
 	"github.com/cosmos/ibc-go/v6/modules/core/exported"
 	"github.com/cosmos/ibc-go/v6/modules/core/types"
 	ibctmtypes "github.com/cosmos/ibc-go/v6/modules/light-clients/07-tendermint/types"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/mock"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
 )
 
 var MaxAccounts = 10
@@ -42,7 +42,7 @@ type SenderAccount struct {
 	SenderAccount authtypes.AccountI
 }
 
-// TestChain is a testing struct that wraps a simapp with the last TM Header, the current ABCI
+// TestChain is a testing struct that wraps a furyapp with the last TM Header, the current ABCI
 // header and the validators of the TestChain. It also contains a field called ChainID. This
 // is the clientID that *other* chains use to refer to this TestChain. The SenderAccount
 // is used for delivering transactions through the application state.
@@ -185,11 +185,11 @@ func (chain *TestChain) GetContext() sdk.Context {
 	return chain.App.GetBaseApp().NewContext(false, chain.CurrentHeader)
 }
 
-// GetSimApp returns the SimApp to allow usage ofnon-interface fields.
+// GetFuryApp returns the FuryApp to allow usage ofnon-interface fields.
 // CONTRACT: This function should not be called by third parties implementing
-// their own SimApp.
-func (chain *TestChain) GetSimApp() *simapp.SimApp {
-	app, ok := chain.App.(*simapp.SimApp)
+// their own FuryApp.
+func (chain *TestChain) GetFuryApp() *furyapp.FuryApp {
+	app, ok := chain.App.(*furyapp.FuryApp)
 	require.True(chain.T, ok)
 
 	return app
@@ -310,7 +310,7 @@ func (chain *TestChain) SendMsgs(msgs ...sdk.Msg) (*sdk.Result, error) {
 	// ensure the chain has the latest time
 	chain.Coordinator.UpdateTimeForChain(chain)
 
-	_, r, err := simapp.SignAndDeliver(
+	_, r, err := furyapp.SignAndDeliver(
 		chain.T,
 		chain.TxConfig,
 		chain.App.GetBaseApp(),

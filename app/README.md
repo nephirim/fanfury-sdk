@@ -2,9 +2,9 @@
 order: false
 ---
 
-# simapp
+# furyapp
 
-simapp is an application built using the Cosmos SDK for testing and educational purposes. 
+furyapp is an application built using the Cosmos SDK for testing and educational purposes. 
 
 ## Running testnets with `furyd` 
 
@@ -18,7 +18,7 @@ in this testnet.
 2. If you've run `furyd` before, you may need to reset your database before starting a new
     testnet: `$ ./furyd unsafe-reset-all` 
 3. `$ ./furyd init [moniker]`. This will initialize a new working directory, by default at 
-    `~/.simapp`. You need a provide a "moniker," but it doesn't matter what it is.
+    `~/.furyapp`. You need a provide a "moniker," but it doesn't matter what it is.
 4. `$ ./furyd keys add [key_name]`. This will create a new key, with a name of your choosing. 
     Save the output of this command somewhere; you'll need the address generated here later.
 5. `$ ./furyd add-genesis-account  $(furyd keys show [key_name] -a) [amount]`, where `key_name`
@@ -32,7 +32,7 @@ in this testnet.
    single-validator genesis files). 
 8. Once you've received the super genesis file, overwrite your original `genesis.json` file with 
     the new super `genesis.json`. 
-9. Modify your `config/config.toml` (in the simapp working directory) to include the other participants as
+9. Modify your `config/config.toml` (in the furyapp working directory) to include the other participants as
     persistent peers:
 
     ```

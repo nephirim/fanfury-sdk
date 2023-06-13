@@ -6,14 +6,14 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp/furyd/cmd"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/furyd/cmd"
 )
 
 func main() {
 	rootCmd, _ := cmd.NewRootCmd()
 
-	if err := svrcmd.Execute(rootCmd, "furyd", simapp.DefaultNodeHome); err != nil {
+	if err := svrcmd.Execute(rootCmd, "furyd", furyapp.DefaultNodeHome); err != nil {
 		switch e := err.(type) {
 		case server.ErrorCode:
 			os.Exit(e.Code)

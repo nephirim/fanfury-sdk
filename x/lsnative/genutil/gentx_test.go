@@ -14,12 +14,12 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp/helpers"
-	simappparams "github.com/persistenceOne/persistence-sdk/v2/simapp/params"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp/helpers"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 var (
@@ -38,18 +38,18 @@ type GenTxTestSuite struct {
 	suite.Suite
 
 	ctx            sdk.Context
-	app            *simapp.SimApp
-	encodingConfig simappparams.EncodingConfig
+	app            *furyapp.FuryApp
+	encodingConfig furyappparams.EncodingConfig
 
 	msg1, msg2 *stakingtypes.MsgCreateValidator
 }
 
 func (suite *GenTxTestSuite) SetupTest() {
 	checkTx := false
-	app := simapp.Setup(suite.T(), checkTx)
+	app := furyapp.Setup(suite.T(), checkTx)
 	suite.ctx = app.BaseApp.NewContext(checkTx, tmproto.Header{})
 	suite.app = app
-	suite.encodingConfig = simapp.MakeTestEncodingConfig()
+	suite.encodingConfig = furyapp.MakeTestEncodingConfig()
 
 	var err error
 	amount := sdk.NewInt64Coin(sdk.DefaultBondDenom, 50)

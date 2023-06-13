@@ -11,14 +11,14 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/epochs/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/epochs/types"
 )
 
 type QueryTestSuite struct {
 	suite.Suite
 
-	app *simapp.SimApp
+	app *furyapp.FuryApp
 	ctx sdk.Context
 
 	queryHelper *baseapp.QueryServiceTestHelper
@@ -26,7 +26,7 @@ type QueryTestSuite struct {
 }
 
 func (s *QueryTestSuite) SetupSuite() {
-	s.app = simapp.Setup(s.T(), false)
+	s.app = furyapp.Setup(s.T(), false)
 	s.ctx = s.app.NewContext(false, tmproto.Header{})
 	s.queryHelper = &baseapp.QueryServiceTestHelper{
 		GRPCQueryRouter: s.app.GRPCQueryRouter(),

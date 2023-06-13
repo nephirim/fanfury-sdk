@@ -1,4 +1,4 @@
-package simapp
+package furyapp
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"

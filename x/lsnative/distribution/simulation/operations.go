@@ -9,10 +9,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	simappparams "github.com/persistenceOne/persistence-sdk/v2/simapp/params"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	stakingkeeper "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/keeper"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	stakingkeeper "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
 )
 
 // Simulation operation weights constants
@@ -30,42 +30,42 @@ func WeightedOperations(appParams simtypes.AppParams, cdc codec.JSONCodec, ak ty
 	var weightMsgSetWithdrawAddress int
 	appParams.GetOrGenerate(cdc, OpWeightMsgSetWithdrawAddress, &weightMsgSetWithdrawAddress, nil,
 		func(_ *rand.Rand) {
-			weightMsgSetWithdrawAddress = simappparams.DefaultWeightMsgSetWithdrawAddress
+			weightMsgSetWithdrawAddress = furyappparams.DefaultWeightMsgSetWithdrawAddress
 		},
 	)
 
 	var weightMsgWithdrawDelegationReward int
 	appParams.GetOrGenerate(cdc, OpWeightMsgWithdrawDelegationReward, &weightMsgWithdrawDelegationReward, nil,
 		func(_ *rand.Rand) {
-			weightMsgWithdrawDelegationReward = simappparams.DefaultWeightMsgWithdrawDelegationReward
+			weightMsgWithdrawDelegationReward = furyappparams.DefaultWeightMsgWithdrawDelegationReward
 		},
 	)
 
 	var weightMsgWithdrawValidatorCommission int
 	appParams.GetOrGenerate(cdc, OpWeightMsgWithdrawValidatorCommission, &weightMsgWithdrawValidatorCommission, nil,
 		func(_ *rand.Rand) {
-			weightMsgWithdrawValidatorCommission = simappparams.DefaultWeightMsgWithdrawValidatorCommission
+			weightMsgWithdrawValidatorCommission = furyappparams.DefaultWeightMsgWithdrawValidatorCommission
 		},
 	)
 
 	var weightMsgFundCommunityPool int
 	appParams.GetOrGenerate(cdc, OpWeightMsgFundCommunityPool, &weightMsgFundCommunityPool, nil,
 		func(_ *rand.Rand) {
-			weightMsgFundCommunityPool = simappparams.DefaultWeightMsgFundCommunityPool
+			weightMsgFundCommunityPool = furyappparams.DefaultWeightMsgFundCommunityPool
 		},
 	)
 
 	// var weightMsgWithdrawTokenizeShareRecordReward int
 	// appParams.GetOrGenerate(cdc, OpWeightMsgWithdrawAllTokenizeShareRecordReward, &weightMsgWithdrawTokenizeShareRecordReward, nil,
 	// 	func(_ *rand.Rand) {
-	// 		weightMsgWithdrawTokenizeShareRecordReward = simappparams.DefaultWeightMsgWithdrawTokenizeShareRecordReward
+	// 		weightMsgWithdrawTokenizeShareRecordReward = furyappparams.DefaultWeightMsgWithdrawTokenizeShareRecordReward
 	// 	},
 	// )
 
 	var weightMsgWithdrawAllTokenizeShareRecordReward int
 	appParams.GetOrGenerate(cdc, OpWeightMsgWithdrawAllTokenizeShareRecordReward, &weightMsgWithdrawAllTokenizeShareRecordReward, nil,
 		func(_ *rand.Rand) {
-			weightMsgWithdrawAllTokenizeShareRecordReward = simappparams.DefaultWeightMsgWithdrawAllTokenizeShareRecordReward
+			weightMsgWithdrawAllTokenizeShareRecordReward = furyappparams.DefaultWeightMsgWithdrawAllTokenizeShareRecordReward
 		},
 	)
 
@@ -119,7 +119,7 @@ func SimulateMsgSetWithdrawAddress(ak types.AccountKeeper, bk types.BankKeeper, 
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:           furyappparams.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
 			MsgType:         msg.Type(),
@@ -161,7 +161,7 @@ func SimulateMsgWithdrawDelegatorReward(ak types.AccountKeeper, bk types.BankKee
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:           furyappparams.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
 			MsgType:         msg.Type(),
@@ -205,7 +205,7 @@ func SimulateMsgWithdrawValidatorCommission(ak types.AccountKeeper, bk types.Ban
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:           furyappparams.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
 			MsgType:         msg.Type(),
@@ -255,7 +255,7 @@ func SimulateMsgFundCommunityPool(ak types.AccountKeeper, bk types.BankKeeper, k
 		txCtx := simulation.OperationInput{
 			R:             r,
 			App:           app,
-			TxGen:         simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:         furyappparams.MakeTestEncodingConfig().TxConfig,
 			Cdc:           nil,
 			Msg:           msg,
 			MsgType:       msg.Type(),
@@ -302,7 +302,7 @@ func SimulateMsgWithdrawAllTokenizeShareRecordReward(ak types.AccountKeeper, bk 
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:           furyappparams.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
 			MsgType:         msg.Type(),

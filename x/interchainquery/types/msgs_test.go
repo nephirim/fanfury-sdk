@@ -5,11 +5,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 const TestOwnerAddress = "cosmos17dtl0mjt3t77kpuhg2edqzjpszulwhgzuj9ljs"
@@ -22,11 +22,11 @@ var (
 )
 
 func init() {
-	ibctesting.DefaultTestingAppInit = simapp.SetupTestingApp
+	ibctesting.DefaultTestingAppInit = furyapp.SetupTestingApp
 }
 
-func GetSimApp(chain *ibctesting.TestChain) *simapp.SimApp {
-	app, ok := chain.App.(*simapp.SimApp)
+func GetFuryApp(chain *ibctesting.TestChain) *furyapp.FuryApp {
+	app, ok := chain.App.(*furyapp.FuryApp)
 	if !ok {
 		panic("not sim app")
 	}
@@ -34,7 +34,7 @@ func GetSimApp(chain *ibctesting.TestChain) *simapp.SimApp {
 	return app
 }
 
-func newSimAppPath(chainA, chainB *ibctesting.TestChain) *ibctesting.Path {
+func newFuryAppPath(chainA, chainB *ibctesting.TestChain) *ibctesting.Path {
 	path := ibctesting.NewPath(chainA, chainB)
 	path.EndpointA.ChannelConfig.PortID = ibctesting.TransferPort
 	path.EndpointB.ChannelConfig.PortID = ibctesting.TransferPort
@@ -46,14 +46,14 @@ func TestMsgSubmitQueryResponse(t *testing.T) {
 	coordinator = ibctesting.NewCoordinator(t, 2)
 	chainA = coordinator.GetChain(ibctesting.GetChainID(1))
 	chainB = coordinator.GetChain(ibctesting.GetChainID(2))
-	path = newSimAppPath(chainA, chainB)
+	path = newFuryAppPath(chainA, chainB)
 	coordinator.SetupConnections(path)
 
 	bondedQuery := stakingtypes.QueryValidatorsRequest{Status: stakingtypes.BondStatusBonded}
 	bz, err := bondedQuery.Marshal()
 	require.NoError(t, err)
 
-	validators := GetSimApp(chainB).StakingKeeper.GetBondedValidatorsByPower(chainB.GetContext())
+	validators := GetFuryApp(chainB).StakingKeeper.GetBondedValidatorsByPower(chainB.GetContext())
 	qvr := stakingtypes.QueryValidatorsResponse{
 		Validators: ibctesting.SdkValidatorsToValidators(validators),
 	}
@@ -61,7 +61,7 @@ func TestMsgSubmitQueryResponse(t *testing.T) {
 	msg := types.MsgSubmitQueryResponse{
 		ChainId:     chainB.ChainID + "-N",
 		QueryId:     keeper.GenerateQueryHash(path.EndpointB.ConnectionID, chainB.ChainID, "cosmos.staking.v1beta1.Query/Validators", bz, ""),
-		Result:      GetSimApp(chainB).AppCodec().MustMarshalJSON(&qvr),
+		Result:      GetFuryApp(chainB).AppCodec().MustMarshalJSON(&qvr),
 		Height:      chainB.CurrentHeader.Height,
 		FromAddress: TestOwnerAddress,
 	}

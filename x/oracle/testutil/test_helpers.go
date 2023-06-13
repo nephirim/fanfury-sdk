@@ -6,10 +6,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
-	stakingkeeper "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/keeper"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
+	stakingkeeper "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 )
 
@@ -57,7 +57,7 @@ func StakingAddValidators(
 	valAddresses := make([]sdk.ValAddress, num)
 	stakingMsgServer := stakingkeeper.NewMsgServerImpl(stakingKeeper)
 
-	valPubKeys := simapp.CreateTestPubKeys(num)
+	valPubKeys := furyapp.CreateTestPubKeys(num)
 
 	for i := 0; i < num; i++ {
 		var (

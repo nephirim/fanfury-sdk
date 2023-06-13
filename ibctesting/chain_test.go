@@ -7,7 +7,7 @@ import (
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/stretchr/testify/require"
 
-	ibctesting "github.com/persistenceOne/persistence-sdk/v2/ibctesting"
+	ibctesting "github.com/incubus-network/fanfury-sdk/v2/ibctesting"
 )
 
 func TestChangeValSet(t *testing.T) {
@@ -23,11 +23,11 @@ func TestChangeValSet(t *testing.T) {
 	amount2, ok := sdk.NewIntFromString("30000000000000000000")
 	require.True(t, ok)
 
-	val := chainA.GetSimApp().StakingKeeper.GetValidators(chainA.GetContext(), 4)
+	val := chainA.GetFuryApp().StakingKeeper.GetValidators(chainA.GetContext(), 4)
 
-	chainA.GetSimApp().StakingKeeper.Delegate(chainA.GetContext(), chainA.SenderAccounts[1].SenderAccount.GetAddress(),
+	chainA.GetFuryApp().StakingKeeper.Delegate(chainA.GetContext(), chainA.SenderAccounts[1].SenderAccount.GetAddress(),
 		amount, sdkstaking.Unbonded, val[1], true)
-	chainA.GetSimApp().StakingKeeper.Delegate(chainA.GetContext(), chainA.SenderAccounts[3].SenderAccount.GetAddress(),
+	chainA.GetFuryApp().StakingKeeper.Delegate(chainA.GetContext(), chainA.SenderAccounts[3].SenderAccount.GetAddress(),
 		amount2, sdkstaking.Unbonded, val[3], true)
 
 	coord.CommitBlock(chainA)

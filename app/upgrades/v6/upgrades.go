@@ -12,11 +12,11 @@ import (
 )
 
 const (
-	// UpgradeName defines the on-chain upgrade name for the SimApp v6 upgrade.
+	// UpgradeName defines the on-chain upgrade name for the FuryApp v6 upgrade.
 	UpgradeName = "v6"
 )
 
-// CreateUpgradeHandler creates an upgrade handler for the v6 SimApp upgrade.
+// CreateUpgradeHandler creates an upgrade handler for the v6 FuryApp upgrade.
 // NOTE: The v6.MigrateICS27ChannelCapabiliity function can be omitted if chains do not yet implement an ICS27 controller module
 func CreateUpgradeHandler(
 	mm *module.Manager,

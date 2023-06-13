@@ -10,14 +10,14 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
-	genutiltest "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/client/testutil"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
+	genutiltest "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/client/testutil"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp"
-	simcmd "github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp/furyd/cmd"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
+	simcmd "github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/furyd/cmd"
 )
 
 var testMbm = module.NewBasicManager(genutil.AppModuleBasic{})
@@ -58,7 +58,7 @@ func TestAddGenesisAccountCmd(t *testing.T) {
 			cfg, err := genutiltest.CreateDefaultTendermintConfig(home)
 			require.NoError(t, err)
 
-			appCodec := simapp.MakeTestEncodingConfig().Marshaler
+			appCodec := furyapp.MakeTestEncodingConfig().Marshaler
 			err = genutiltest.ExecInitCmd(testMbm, home, appCodec)
 			require.NoError(t, err)
 

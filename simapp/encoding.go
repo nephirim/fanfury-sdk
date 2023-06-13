@@ -1,8 +1,8 @@
-package simapp
+package furyapp
 
 import (
 	"github.com/cosmos/cosmos-sdk/std"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp/params"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
 )
 
 // MakeTestEncodingConfig creates an EncodingConfig for testing. This function

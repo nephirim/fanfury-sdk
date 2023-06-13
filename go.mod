@@ -1,4 +1,4 @@
-module github.com/
+module github.com/incubus-network/fanfury-sdk
 
 go 1.19
 

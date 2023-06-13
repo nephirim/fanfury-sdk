@@ -8,14 +8,14 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
 
-	v046staking "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/migrations/v046"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	v046staking "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestStoreMigration(t *testing.T) {
-	encCfg := simapp.MakeTestEncodingConfig()
+	encCfg := furyapp.MakeTestEncodingConfig()
 	stakingKey := sdk.NewKVStoreKey("staking")
 	tStakingKey := sdk.NewTransientStoreKey("transient_test")
 	ctx := testutil.DefaultContext(stakingKey, tStakingKey)

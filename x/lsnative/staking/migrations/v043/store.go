@@ -7,9 +7,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/address"
 	v042auth "github.com/cosmos/cosmos-sdk/x/auth/migrations/v042"
 
-	v043distribution "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/migrations/v043"
-	v040staking "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/migrations/v042"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	v043distribution "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/migrations/v043"
+	v040staking "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v042"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // migratePrefixAddressAddressAddress is a helper function that migrates all keys of format:

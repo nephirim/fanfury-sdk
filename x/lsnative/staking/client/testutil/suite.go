@@ -20,9 +20,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	banktestutil "github.com/cosmos/cosmos-sdk/x/bank/client/testutil"
-	"github.com/persistenceOne/persistence-sdk/v2/testutil/network"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/client/cli"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/testutil/network"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/client/cli"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 type IntegrationTestSuite struct {

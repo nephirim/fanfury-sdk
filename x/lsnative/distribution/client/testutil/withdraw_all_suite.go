@@ -10,9 +10,9 @@ import (
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktestutil "github.com/cosmos/cosmos-sdk/x/bank/client/testutil"
-	"github.com/persistenceOne/persistence-sdk/v2/testutil/network"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/client/cli"
-	stakingcli "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/client/cli"
+	"github.com/incubus-network/fanfury-sdk/v2/testutil/network"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/client/cli"
+	stakingcli "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/client/cli"
 	"github.com/stretchr/testify/suite"
 )
 

@@ -11,16 +11,16 @@ import (
 	dbm "github.com/tendermint/tm-db"
 
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestItCreatesModuleAccountOnInitBlock(t *testing.T) {
 	db := dbm.NewMemDB()
-	encCdc := simapp.MakeTestEncodingConfig()
-	app := simapp.NewSimApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, simapp.DefaultNodeHome, 5, encCdc, simapp.EmptyAppOptions{})
+	encCdc := furyapp.MakeTestEncodingConfig()
+	app := furyapp.NewFuryApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, furyapp.DefaultNodeHome, 5, encCdc, furyapp.EmptyAppOptions{})
 
-	genesisState := simapp.GenesisStateWithSingleValidator(t, app)
+	genesisState := furyapp.GenesisStateWithSingleValidator(t, app)
 	stateBytes, err := tmjson.Marshal(genesisState)
 	require.NoError(t, err)
 

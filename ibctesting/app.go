@@ -17,7 +17,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	capabilitykeeper "github.com/cosmos/cosmos-sdk/x/capability/keeper"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
@@ -26,8 +26,8 @@ import (
 	dbm "github.com/tendermint/tm-db"
 
 	"github.com/cosmos/ibc-go/v6/modules/core/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp"
-	ibctestingtypes "github.com/persistenceOne/persistence-sdk/v2/ibctesting/types"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
+	ibctestingtypes "github.com/incubus-network/fanfury-sdk/v2/ibctesting/types"
 )
 
 var DefaultTestingAppInit = SetupTestingApp
@@ -42,7 +42,7 @@ type TestingApp interface {
 	GetScopedIBCKeeper() capabilitykeeper.ScopedKeeper
 	GetTxConfig() client.TxConfig
 
-	// Implemented by SimApp
+	// Implemented by FuryApp
 	AppCodec() codec.Codec
 
 	// Implemented by BaseApp
@@ -52,15 +52,15 @@ type TestingApp interface {
 
 func SetupTestingApp() (TestingApp, map[string]json.RawMessage) {
 	db := dbm.NewMemDB()
-	encCdc := simapp.MakeTestEncodingConfig()
-	app := simapp.NewSimApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, simapp.DefaultNodeHome, 5, encCdc, simapp.EmptyAppOptions{})
-	return app, simapp.NewDefaultGenesisState(encCdc.Marshaler)
+	encCdc := furyapp.MakeTestEncodingConfig()
+	app := furyapp.NewFuryApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, furyapp.DefaultNodeHome, 5, encCdc, furyapp.EmptyAppOptions{})
+	return app, furyapp.NewDefaultGenesisState(encCdc.Marshaler)
 }
 
-// SetupWithGenesisValSet initializes a new SimApp with a validator set and genesis accounts
+// SetupWithGenesisValSet initializes a new FuryApp with a validator set and genesis accounts
 // that also act as delegators. For simplicity, each validator is bonded with a delegation
-// of one consensus engine unit (10^6) in the default token of the simapp from first genesis
-// account. A Nop logger is set in SimApp.
+// of one consensus engine unit (10^6) in the default token of the furyapp from first genesis
+// account. A Nop logger is set in FuryApp.
 func SetupWithGenesisValSet(t *testing.T, valSet *tmtypes.ValidatorSet, genAccs []authtypes.GenesisAccount, chainID string, powerReduction math.Int, balances ...banktypes.Balance) TestingApp {
 	app, genesisState := DefaultTestingAppInit()
 
@@ -124,7 +124,7 @@ func SetupWithGenesisValSet(t *testing.T, valSet *tmtypes.ValidatorSet, genAccs 
 		abci.RequestInitChain{
 			ChainId:         chainID,
 			Validators:      []abci.ValidatorUpdate{},
-			ConsensusParams: simapp.DefaultConsensusParams,
+			ConsensusParams: furyapp.DefaultConsensusParams,
 			AppStateBytes:   stateBytes,
 		},
 	)

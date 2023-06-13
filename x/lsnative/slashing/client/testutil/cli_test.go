@@ -6,7 +6,7 @@ package testutil
 import (
 	"testing"
 
-	"github.com/persistenceOne/persistence-sdk/v2/testutil/network"
+	"github.com/incubus-network/fanfury-sdk/v2/testutil/network"
 
 	"github.com/stretchr/testify/suite"
 )

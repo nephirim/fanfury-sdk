@@ -1,4 +1,4 @@
-package simapp
+package furyapp
 
 import (
 	"os"
@@ -21,28 +21,28 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/params"
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	ibc "github.com/cosmos/ibc-go/v6/modules/core"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/persistenceOne/persistence-sdk/v2/x/epochs"
-	"github.com/persistenceOne/persistence-sdk/v2/x/halving"
-	"github.com/persistenceOne/persistence-sdk/v2/x/ibchooker"
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle"
+	"github.com/incubus-network/fanfury-sdk/v2/x/epochs"
+	"github.com/incubus-network/fanfury-sdk/v2/x/halving"
+	"github.com/incubus-network/fanfury-sdk/v2/x/ibchooker"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle"
 )
 
-func TestSimAppExportAndBlockedAddrs(t *testing.T) {
+func TestFuryAppExportAndBlockedAddrs(t *testing.T) {
 	encCfg := MakeTestEncodingConfig()
 	db := dbm.NewMemDB()
 	logger := log.NewTMLogger(log.NewSyncWriter(os.Stdout))
-	app := NewSimappWithCustomOptions(t, false, SetupOptions{
+	app := NewFuryappWithCustomOptions(t, false, SetupOptions{
 		Logger:             logger,
 		DB:                 db,
 		InvCheckPeriod:     0,
@@ -64,7 +64,7 @@ func TestSimAppExportAndBlockedAddrs(t *testing.T) {
 
 	logger2 := log.NewTMLogger(log.NewSyncWriter(os.Stdout))
 	// Making a new app object with the db, so that initchain hasn't been called
-	app2 := NewSimApp(logger2, db, nil, true, map[int64]bool{}, DefaultNodeHome, 0, encCfg, EmptyAppOptions{})
+	app2 := NewFuryApp(logger2, db, nil, true, map[int64]bool{}, DefaultNodeHome, 0, encCfg, EmptyAppOptions{})
 	_, err := app2.ExportAppStateAndValidators(false, []string{})
 	require.NoError(t, err, "ExportAppStateAndValidators should not have an error")
 }
@@ -78,7 +78,7 @@ func TestRunMigrations(t *testing.T) {
 	db := dbm.NewMemDB()
 	encCfg := MakeTestEncodingConfig()
 	logger := log.NewTMLogger(log.NewSyncWriter(os.Stdout))
-	app := NewSimApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, 0, encCfg, EmptyAppOptions{})
+	app := NewFuryApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, 0, encCfg, EmptyAppOptions{})
 
 	// Create a new baseapp and configurator for the purpose of this test.
 	bApp := baseapp.NewBaseApp(appName, logger, db, encCfg.TxConfig.TxDecoder())
@@ -214,7 +214,7 @@ func TestUpgradeStateOnGenesis(t *testing.T) {
 	encCfg := MakeTestEncodingConfig()
 	db := dbm.NewMemDB()
 	logger := log.NewTMLogger(log.NewSyncWriter(os.Stdout))
-	app := NewSimappWithCustomOptions(t, false, SetupOptions{
+	app := NewFuryappWithCustomOptions(t, false, SetupOptions{
 		Logger:             logger,
 		DB:                 db,
 		InvCheckPeriod:     0,

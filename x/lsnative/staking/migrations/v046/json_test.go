@@ -7,14 +7,14 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
 
-	v046 "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/migrations/v046"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	v046 "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestMigrateJSON(t *testing.T) {
-	encodingConfig := simapp.MakeTestEncodingConfig()
+	encodingConfig := furyapp.MakeTestEncodingConfig()
 	clientCtx := client.Context{}.
 		WithInterfaceRegistry(encodingConfig.InterfaceRegistry).
 		WithTxConfig(encodingConfig.TxConfig).

@@ -11,12 +11,12 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	simappparams "github.com/persistenceOne/persistence-sdk/v2/simapp/params"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	distrtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/simulation"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // TestWeightedOperations tests the weights of the operations.
@@ -38,12 +38,12 @@ func (suite *SimTestSuite) TestWeightedOperations() {
 		opMsgRoute string
 		opMsgName  string
 	}{
-		{simappparams.DefaultWeightMsgSetWithdrawAddress, types.ModuleName, types.TypeMsgSetWithdrawAddress},
-		{simappparams.DefaultWeightMsgWithdrawDelegationReward, types.ModuleName, types.TypeMsgWithdrawDelegatorReward},
-		{simappparams.DefaultWeightMsgWithdrawValidatorCommission, types.ModuleName, types.TypeMsgWithdrawValidatorCommission},
-		{simappparams.DefaultWeightMsgFundCommunityPool, types.ModuleName, types.TypeMsgFundCommunityPool},
-		// {simappparams.DefaultWeightMsgWithdrawTokenizeShareRecordReward, types.ModuleName, types.TypeMsgWithdrawTokenizeShareRecordReward},
-		{simappparams.DefaultWeightMsgWithdrawAllTokenizeShareRecordReward, types.ModuleName, types.TypeMsgWithdrawAllTokenizeShareRecordReward},
+		{furyappparams.DefaultWeightMsgSetWithdrawAddress, types.ModuleName, types.TypeMsgSetWithdrawAddress},
+		{furyappparams.DefaultWeightMsgWithdrawDelegationReward, types.ModuleName, types.TypeMsgWithdrawDelegatorReward},
+		{furyappparams.DefaultWeightMsgWithdrawValidatorCommission, types.ModuleName, types.TypeMsgWithdrawValidatorCommission},
+		{furyappparams.DefaultWeightMsgFundCommunityPool, types.ModuleName, types.TypeMsgFundCommunityPool},
+		// {furyappparams.DefaultWeightMsgWithdrawTokenizeShareRecordReward, types.ModuleName, types.TypeMsgWithdrawTokenizeShareRecordReward},
+		{furyappparams.DefaultWeightMsgWithdrawAllTokenizeShareRecordReward, types.ModuleName, types.TypeMsgWithdrawAllTokenizeShareRecordReward},
 	}
 
 	for i, w := range weightesOps {
@@ -217,13 +217,13 @@ type SimTestSuite struct {
 	suite.Suite
 
 	ctx         sdk.Context
-	app         *simapp.SimApp
+	app         *furyapp.FuryApp
 	genesisVals []stakingtypes.Validator
 }
 
 func (suite *SimTestSuite) SetupTest() {
 	checkTx := false
-	app := simapp.Setup(suite.T(), checkTx)
+	app := furyapp.Setup(suite.T(), checkTx)
 	suite.app = app
 	suite.ctx = app.BaseApp.NewContext(checkTx, tmproto.Header{})
 	genesisVals := app.StakingKeeper.GetAllValidators(suite.ctx)

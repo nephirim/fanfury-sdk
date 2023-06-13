@@ -13,10 +13,10 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	tmtime "github.com/tendermint/tendermint/types/time"
 
-	persistenceapp "github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/testutil"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
+	persistenceapp "github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/testutil"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
 )
 
 type KeeperTestSuite struct {
@@ -26,7 +26,7 @@ type KeeperTestSuite struct {
 	valAddresses []sdk.ValAddress
 
 	ctx         sdk.Context
-	app         *persistenceapp.SimApp
+	app         *persistenceapp.FuryApp
 	queryClient types.QueryClient
 	msgServer   types.MsgServer
 }
@@ -60,7 +60,7 @@ func (s *KeeperTestSuite) SetupTest() {
 	s.queryClient = types.NewQueryClient(queryHelper)
 }
 
-func (s *KeeperTestSuite) initAppAndContext() (app *persistenceapp.SimApp, ctx sdk.Context) {
+func (s *KeeperTestSuite) initAppAndContext() (app *persistenceapp.FuryApp, ctx sdk.Context) {
 	app = persistenceapp.Setup(s.T(), false)
 	ctx = app.BaseApp.NewContext(false, tmproto.Header{
 		Height: initialHeight,

@@ -13,7 +13,7 @@ import (
 	gogotypes "github.com/gogo/protobuf/types"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
 )
 
 // Keeper of the oracle store

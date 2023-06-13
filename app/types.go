@@ -1,4 +1,4 @@
-package simapp
+package furyapp
 
 import (
 	"github.com/cosmos/cosmos-sdk/codec"

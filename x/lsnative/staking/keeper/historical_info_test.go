@@ -9,9 +9,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // IsValSetSorted reports whether valset is sorted.
@@ -28,8 +28,8 @@ func IsValSetSorted(data []types.Validator, powerReduction math.Int) bool {
 func TestHistoricalInfo(t *testing.T) {
 	_, app, ctx := createTestInput(t)
 
-	addrDels := simapp.AddTestAddrsIncremental(app, ctx, 50, sdk.NewInt(0))
-	addrVals := simapp.ConvertAddrsToValAddrs(addrDels)
+	addrDels := furyapp.AddTestAddrsIncremental(app, ctx, 50, sdk.NewInt(0))
+	addrVals := furyapp.ConvertAddrsToValAddrs(addrDels)
 
 	validators := make([]types.Validator, len(addrVals))
 
@@ -55,8 +55,8 @@ func TestHistoricalInfo(t *testing.T) {
 func TestTrackHistoricalInfo(t *testing.T) {
 	_, app, ctx := createTestInput(t)
 
-	addrDels := simapp.AddTestAddrsIncremental(app, ctx, 50, sdk.NewInt(0))
-	addrVals := simapp.ConvertAddrsToValAddrs(addrDels)
+	addrDels := furyapp.AddTestAddrsIncremental(app, ctx, 50, sdk.NewInt(0))
+	addrVals := furyapp.ConvertAddrsToValAddrs(addrDels)
 
 	// set historical entries in params to 5
 	params := types.DefaultParams()
@@ -141,8 +141,8 @@ func TestGetAllHistoricalInfo(t *testing.T) {
 	require.Len(t, infos, 1)
 	app.StakingKeeper.DeleteHistoricalInfo(ctx, infos[0].Header.Height)
 
-	addrDels := simapp.AddTestAddrsIncremental(app, ctx, 50, sdk.NewInt(0))
-	addrVals := simapp.ConvertAddrsToValAddrs(addrDels)
+	addrDels := furyapp.AddTestAddrsIncremental(app, ctx, 50, sdk.NewInt(0))
+	addrVals := furyapp.ConvertAddrsToValAddrs(addrDels)
 
 	valSet := []types.Validator{
 		teststaking.NewValidator(t, addrVals[0], PKs[0]),

@@ -1,4 +1,4 @@
-package simapp_test
+package furyapp_test
 
 import (
 	"testing"
@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/crypto"
 
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/simapp"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
 )
 
 func TestSimGenesisAccountValidate(t *testing.T) {
@@ -24,26 +24,26 @@ func TestSimGenesisAccountValidate(t *testing.T) {
 
 	testCases := []struct {
 		name    string
-		sga     simapp.SimGenesisAccount
+		sga     furyapp.SimGenesisAccount
 		wantErr bool
 	}{
 		{
 			"valid basic account",
-			simapp.SimGenesisAccount{
+			furyapp.SimGenesisAccount{
 				BaseAccount: baseAcc,
 			},
 			false,
 		},
 		{
 			"invalid basic account with mismatching address/pubkey",
-			simapp.SimGenesisAccount{
+			furyapp.SimGenesisAccount{
 				BaseAccount: authtypes.NewBaseAccount(addr, secp256k1.GenPrivKey().PubKey(), 0, 0),
 			},
 			true,
 		},
 		{
 			"valid basic account with module name",
-			simapp.SimGenesisAccount{
+			furyapp.SimGenesisAccount{
 				BaseAccount: authtypes.NewBaseAccount(sdk.AccAddress(crypto.AddressHash([]byte("testmod"))), nil, 0, 0),
 				ModuleName:  "testmod",
 			},
@@ -51,7 +51,7 @@ func TestSimGenesisAccountValidate(t *testing.T) {
 		},
 		{
 			"valid basic account with invalid module name/pubkey pair",
-			simapp.SimGenesisAccount{
+			furyapp.SimGenesisAccount{
 				BaseAccount: baseAcc,
 				ModuleName:  "testmod",
 			},
@@ -59,7 +59,7 @@ func TestSimGenesisAccountValidate(t *testing.T) {
 		},
 		{
 			"valid basic account with valid vesting attributes",
-			simapp.SimGenesisAccount{
+			furyapp.SimGenesisAccount{
 				BaseAccount:     baseAcc,
 				OriginalVesting: coins,
 				StartTime:       vestingStart.Unix(),
@@ -69,7 +69,7 @@ func TestSimGenesisAccountValidate(t *testing.T) {
 		},
 		{
 			"valid basic account with invalid vesting end time",
-			simapp.SimGenesisAccount{
+			furyapp.SimGenesisAccount{
 				BaseAccount:     baseAcc,
 				OriginalVesting: coins,
 				StartTime:       vestingStart.Add(2 * time.Hour).Unix(),

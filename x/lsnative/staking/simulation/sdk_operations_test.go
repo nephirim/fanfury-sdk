@@ -12,10 +12,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	simappparams "github.com/persistenceOne/persistence-sdk/v2/simapp/params"
-	distrtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/furyapp/params"
+	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/simulation"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // TestSdkWeightedOperations tests the weights of the operations for sdkstaking types.
@@ -38,12 +38,12 @@ func TestSdkWeightedOperations(t *testing.T) {
 		opMsgRoute string
 		opMsgName  string
 	}{
-		{simappparams.DefaultWeightMsgCreateValidator, sdkstaking.ModuleName, sdkstaking.TypeMsgCreateValidator},
-		{simappparams.DefaultWeightMsgEditValidator, sdkstaking.ModuleName, sdkstaking.TypeMsgEditValidator},
-		{simappparams.DefaultWeightMsgDelegate, sdkstaking.ModuleName, sdkstaking.TypeMsgDelegate},
-		{simappparams.DefaultWeightMsgUndelegate, sdkstaking.ModuleName, sdkstaking.TypeMsgUndelegate},
-		{simappparams.DefaultWeightMsgBeginRedelegate, sdkstaking.ModuleName, sdkstaking.TypeMsgBeginRedelegate},
-		{simappparams.DefaultWeightMsgCancelUnbondingDelegation, sdkstaking.ModuleName, sdkstaking.TypeMsgCancelUnbondingDelegation},
+		{furyappparams.DefaultWeightMsgCreateValidator, sdkstaking.ModuleName, sdkstaking.TypeMsgCreateValidator},
+		{furyappparams.DefaultWeightMsgEditValidator, sdkstaking.ModuleName, sdkstaking.TypeMsgEditValidator},
+		{furyappparams.DefaultWeightMsgDelegate, sdkstaking.ModuleName, sdkstaking.TypeMsgDelegate},
+		{furyappparams.DefaultWeightMsgUndelegate, sdkstaking.ModuleName, sdkstaking.TypeMsgUndelegate},
+		{furyappparams.DefaultWeightMsgBeginRedelegate, sdkstaking.ModuleName, sdkstaking.TypeMsgBeginRedelegate},
+		{furyappparams.DefaultWeightMsgCancelUnbondingDelegation, sdkstaking.ModuleName, sdkstaking.TypeMsgCancelUnbondingDelegation},
 	}
 
 	for i, w := range weightesOps {

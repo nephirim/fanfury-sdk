@@ -1,7 +1,7 @@
 package testslashing
 
 import (
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 // TestParams construct default slashing params for tests.

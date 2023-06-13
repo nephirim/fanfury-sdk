@@ -5,12 +5,12 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/persistenceOne/persistence-sdk/v2/simapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/epochs/types"
+	"github.com/incubus-network/fanfury-sdk/v2/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/x/epochs/types"
 )
 
 type KeeperTestSuite struct {
-	simapp.KeeperTestHelper
+	furyapp.KeeperTestHelper
 	queryClient types.QueryClient
 }
 
