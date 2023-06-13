@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 )
 
 // Test the reward giving mechanism
@@ -18,7 +18,7 @@ func (s *KeeperTestSuite) TestRewardBallotWinners() {
 	}
 
 	// Prepare reward pool
-	givingAmt := sdk.NewCoins(sdk.NewInt64Coin(types.PersistenceDenom, 30000000))
+	givingAmt := sdk.NewCoins(sdk.NewInt64Coin(types.FanfuryDenom, 30000000))
 	err := s.app.BankKeeper.MintCoins(s.ctx, minttypes.ModuleName, givingAmt)
 	s.Require().NoError(err)
 	err = s.app.BankKeeper.SendCoinsFromModuleToModule(s.ctx, minttypes.ModuleName, types.ModuleName, givingAmt)
@@ -40,8 +40,8 @@ func (s *KeeperTestSuite) TestRewardBallotWinners() {
 
 	outstandingRewardsDec := s.app.DistrKeeper.GetValidatorOutstandingRewardsCoins(s.ctx, valAddr)
 	outstandingRewards, _ := outstandingRewardsDec.TruncateDecimal()
-	s.Require().Equal(sdk.NewDecFromInt(givingAmt.AmountOf(types.PersistenceDenom)).QuoInt64(votePeriodsPerWindow).QuoInt64(3).TruncateInt(),
-		outstandingRewards.AmountOf(types.PersistenceDenom))
+	s.Require().Equal(sdk.NewDecFromInt(givingAmt.AmountOf(types.FanfuryDenom)).QuoInt64(votePeriodsPerWindow).QuoInt64(3).TruncateInt(),
+		outstandingRewards.AmountOf(types.FanfuryDenom))
 }
 
 func (s *KeeperTestSuite) TestRewardBallotWinnersZeroPower() {

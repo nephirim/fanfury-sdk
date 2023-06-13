@@ -6,8 +6,8 @@ const (
 	InitiallyBondedValidators = "initially_bonded_validators"
 
 	// BondDenom defines the native staking token denomination.
-	BondDenom = "xprt"
+	BondDenom = "fury"
 
-	// DisplayDenom defines the name, symbol, and display value of the persistence token.
-	DisplayDenom = "persistence"
+	// DisplayDenom defines the name, symbol, and display value of the fanfury token.
+	DisplayDenom = "fanfury"
 )

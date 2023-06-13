@@ -4,7 +4,7 @@ import (
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	v042distribution "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/migrations/v042"
+	v042distribution "github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/migrations/v042"
 )
 
 // MigrateStore performs in-place store migrations from v0.40 to v0.43. The

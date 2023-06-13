@@ -12,7 +12,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/version"
 	sdkdistr "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module

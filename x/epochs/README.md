@@ -26,7 +26,7 @@ We refer to the period in between two timer ticks as an "epoch".
 
 Every timer has a unique identifier.
 Every epoch will have a start time, and an end time, where `end time = start time + timer interval`.
-On Persistence mainnet, we only utilize one identifier, with a time interval of `one day`.
+On Fanfury mainnet, we only utilize one identifier, with a time interval of `one day`.
 
 The timer will tick at the first block whose blocktime is greater than the timer end time,
 and set the start as the prior timer end time. (Notably, its not set to the block time!)
@@ -137,7 +137,7 @@ service Query {
 Query the currently running epochInfos
 
 ```sh
-persistenceCore query epochs epoch-infos
+fanfuryCore query epochs epoch-infos
 ```
 
 ::: details Example
@@ -169,7 +169,7 @@ epochs:
 Query the current epoch by the specified identifier
 
 ```sh
-persistenceCore query epochs current-epoch [identifier]
+fanfuryCore query epochs current-epoch [identifier]
 ```
 
 ::: details Example
@@ -177,7 +177,7 @@ persistenceCore query epochs current-epoch [identifier]
 Query the current `day` epoch:
 
 ```sh
-persistenceCore query epochs current-epoch day
+fanfuryCore query epochs current-epoch day
 ```
 
 Which in this example outputs:

@@ -10,10 +10,10 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	sdkdistr "github.com/cosmos/cosmos-sdk/x/distribution/types"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
-	stakingkeeper "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
+	furyappparams "github.com/nephirim/fanfury-sdk/v2/app/params"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types"
+	stakingkeeper "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/keeper"
 )
 
 // SdkWeightedOperations returns all the operations from the module with their respective weights

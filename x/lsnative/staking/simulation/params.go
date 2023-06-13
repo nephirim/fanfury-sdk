@@ -8,7 +8,7 @@ import (
 
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // ParamChanges defines the parameters that can be modified by param change proposals

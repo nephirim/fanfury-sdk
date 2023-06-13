@@ -1,22 +1,22 @@
 /*
- Copyright [2019] - [2021], PERSISTENCE TECHNOLOGIES PTE. LTD. and the persistenceCore contributors
+ Copyright [2019] - [2021], FANFURY TECHNOLOGIES PTE. LTD. and the fanfuryCore contributors
  SPDX-License-Identifier: Apache-2.0
 */
 
 syntax = "proto3";
-package persistence.halving.v1beta1;
+package fanfury.halving.v1beta1;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "persistence/halving/v1beta1/halving.proto";
+import "fanfury/halving/v1beta1/halving.proto";
 
-option go_package = "github.com/incubus-network/fanfury-sdk/v2/x/halving/types";
+option go_package = "github.com/nephirim/fanfury-sdk/v2/x/halving/types";
 
 // Query provides defines the gRPC querier service.
 service Query {
   // Params returns the total set of halving parameters.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/persistence/halving/v1beta1/params";
+    option (google.api.http).get = "/fanfury/halving/v1beta1/params";
   }
 }
 

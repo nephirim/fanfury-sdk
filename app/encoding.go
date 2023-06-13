@@ -2,7 +2,7 @@ package furyapp
 
 import (
 	"github.com/cosmos/cosmos-sdk/std"
-	"github.com/incubus-network/fanfury-sdk/v2/app/params"
+	"github.com/nephirim/fanfury-sdk/v2/app/params"
 )
 
 // MakeTestEncodingConfig creates an EncodingConfig for testing. This function

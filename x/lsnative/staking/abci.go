@@ -7,8 +7,8 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // BeginBlocker will persist the current header and validator set as a historical entry

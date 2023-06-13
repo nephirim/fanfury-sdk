@@ -3,12 +3,12 @@ package keeper_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 )
 
 func (s *KeeperTestSuite) TestBallot_OrganizeBallotByDenom() {
 	valAddr := s.valAddresses[0]
-	s.app.OracleKeeper.SetExchangeRate(s.ctx, types.PersistenceDenom, sdk.OneDec())
+	s.app.OracleKeeper.SetExchangeRate(s.ctx, types.FanfuryDenom, sdk.OneDec())
 
 	// Empty Map
 	claimMap := make(map[string]types.Claim)
@@ -19,7 +19,7 @@ func (s *KeeperTestSuite) TestBallot_OrganizeBallotByDenom() {
 		s.ctx, valAddr, types.AggregateExchangeRateVote{
 			ExchangeRateTuples: types.ExchangeRateTuples{
 				types.ExchangeRateTuple{
-					Denom:        "XPRT",
+					Denom:        "FURY",
 					ExchangeRate: sdk.OneDec(),
 				},
 			},
@@ -36,8 +36,8 @@ func (s *KeeperTestSuite) TestBallot_OrganizeBallotByDenom() {
 	res = s.app.OracleKeeper.OrganizeBallotByDenom(s.ctx, claimMap)
 	s.Require().Equal([]types.BallotDenom{
 		{
-			Ballot: types.ExchangeRateBallot{types.NewVoteForTally(sdk.OneDec(), "XPRT", valAddr, 1)},
-			Denom:  "XPRT",
+			Ballot: types.ExchangeRateBallot{types.NewVoteForTally(sdk.OneDec(), "FURY", valAddr, 1)},
+			Denom:  "FURY",
 		},
 	}, res)
 }
@@ -57,7 +57,7 @@ func (s *KeeperTestSuite) TestBallot_ClearBallots() {
 
 	var tuples types.ExchangeRateTuples
 	tuples = append(tuples, types.ExchangeRateTuple{
-		Denom:        "XPRT",
+		Denom:        "FURY",
 		ExchangeRate: sdk.ZeroDec(),
 	})
 	vote := types.AggregateExchangeRateVote{

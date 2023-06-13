@@ -12,10 +12,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
-	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/simulation"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	furyappparams "github.com/nephirim/fanfury-sdk/v2/app/params"
+	distrtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/simulation"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // TestSdkWeightedOperations tests the weights of the operations for sdkstaking types.

@@ -14,7 +14,7 @@ var valAddrStr = sdk.ValAddress(valAddr).String()
 
 func TestAggregateExchangeRatePrevoteString(t *testing.T) {
 	addr := sdk.ValAddress(valAddr)
-	aggregateVoteHash := GetAggregateVoteHash("salt", "XPRT:100,ATOM:100", addr)
+	aggregateVoteHash := GetAggregateVoteHash("salt", "FURY:100,ATOM:100", addr)
 	aggregateExchangeRatePreVote := NewAggregateExchangeRatePrevote(
 		aggregateVoteHash,
 		addr,
@@ -28,7 +28,7 @@ func TestAggregateExchangeRatePrevoteString(t *testing.T) {
 func TestAggregateExchangeRateVoteString(t *testing.T) {
 	aggregateExchangeRatePreVote := NewAggregateExchangeRateVote(
 		ExchangeRateTuples{
-			NewExchangeRateTuple(PersistenceDenom, sdk.OneDec()),
+			NewExchangeRateTuple(FanfuryDenom, sdk.OneDec()),
 		},
 		sdk.ValAddress(valAddr),
 	)
@@ -38,7 +38,7 @@ func TestAggregateExchangeRateVoteString(t *testing.T) {
 }
 
 func TestExchangeRateTuplesString(t *testing.T) {
-	exchangeRateTuple := NewExchangeRateTuple(PersistenceDenom, sdk.OneDec())
+	exchangeRateTuple := NewExchangeRateTuple(FanfuryDenom, sdk.OneDec())
 	require.Equal(t, exchangeRateTuple.String(), "denom: uxprt\nexchange_rate: \"1.000000000000000000\"\n")
 
 	exchangeRateTuples := ExchangeRateTuples{

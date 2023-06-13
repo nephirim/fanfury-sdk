@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/epochs/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/epochs/types"
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"

@@ -13,9 +13,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/query"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/testslashing"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/testslashing"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 type SlashingTestSuite struct {

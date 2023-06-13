@@ -20,9 +20,9 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
+	furyappparams "github.com/nephirim/fanfury-sdk/v2/app/params"
 )
 
 // AppStateFn returns the initial application state using a genesis or the simulation parameters.

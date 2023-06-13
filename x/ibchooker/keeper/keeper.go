@@ -1,6 +1,6 @@
 package keeper
 
-import "github.com/incubus-network/fanfury-sdk/v2/x/ibchooker/types"
+import "github.com/nephirim/fanfury-sdk/v2/x/ibchooker/types"
 
 type Keeper struct {
 	hooks types.IBCHandshakeHooks

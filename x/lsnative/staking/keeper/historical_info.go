@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // GetLiquidStakingHistoricalInfo gets the historical info at a given height

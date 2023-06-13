@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/app"
 
-	v046 "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	v046 "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestMigrateJSON(t *testing.T) {

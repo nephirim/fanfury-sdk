@@ -14,7 +14,7 @@ var (
 )
 
 func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
-	cdc.RegisterConcrete(&MsgSubmitQueryResponse{}, "persistence-sdk/MsgSubmitQueryResponse", nil)
+	cdc.RegisterConcrete(&MsgSubmitQueryResponse{}, "fanfury-sdk/MsgSubmitQueryResponse", nil)
 }
 
 func RegisterInterfaces(registry types.InterfaceRegistry) {

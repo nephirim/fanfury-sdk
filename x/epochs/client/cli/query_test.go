@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/epochs/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/epochs/types"
 )
 
 type QueryTestSuite struct {
@@ -60,13 +60,13 @@ func (s *QueryTestSuite) TestQueriesNeverAlterState() {
 	}{
 		{
 			"Query current epoch",
-			"/persistence.epochs.v1beta1.Query/CurrentEpoch",
+			"/fanfury.epochs.v1beta1.Query/CurrentEpoch",
 			&types.QueryCurrentEpochRequest{Identifier: "weekly"},
 			&types.QueryCurrentEpochResponse{},
 		},
 		{
 			"Query epochs info",
-			"/persistence.epochs.v1beta1.Query/EpochInfos",
+			"/fanfury.epochs.v1beta1.Query/EpochInfos",
 			&types.QueryEpochsInfoRequest{},
 			&types.QueryEpochsInfoResponse{},
 		},

@@ -26,5 +26,5 @@ Mgoogle/protobuf/any.proto=github.com/cosmos/cosmos-sdk/codec/types:. \
 done
 
 # move proto files to the right places
-cp -r github.com/incubus-network/fanfury-sdk/v2/* ./
+cp -r github.com/nephirim/fanfury-sdk/v2/* ./
 rm -rf github.com

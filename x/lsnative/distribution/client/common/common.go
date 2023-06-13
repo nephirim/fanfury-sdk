@@ -5,7 +5,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types"
 )
 
 // QueryDelegationRewards queries a delegation rewards between a delegator and a

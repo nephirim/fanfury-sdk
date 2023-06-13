@@ -17,11 +17,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	sdkslashing "github.com/cosmos/cosmos-sdk/x/slashing/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/client/cli"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/simulation"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
-	stakingkeeper "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/client/cli"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/simulation"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/types"
+	stakingkeeper "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/keeper"
 )
 
 var (

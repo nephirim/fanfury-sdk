@@ -24,10 +24,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
-	genutilcli "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/client/cli"
-	genutiltest "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/client/testutil"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil"
+	genutilcli "github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil/client/cli"
+	genutiltest "github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil/client/testutil"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking"
 )
 
 var testMbm = module.NewBasicManager(

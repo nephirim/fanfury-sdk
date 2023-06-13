@@ -9,7 +9,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 )
 
 // generateSalt generates a random salt, size length/2,  as a HEX encoded string.
@@ -78,8 +78,8 @@ func (s *KeeperTestSuite) TestMsgServer_AggregateExchangeRateVote() {
 	app, ctx := s.app, s.ctx
 	addr, valAddr := s.accAddresses[0], s.valAddresses[0]
 
-	ratesStr := "xprt:123.2"
-	ratesStrInvalidCoin := "xprt:123.2,badcoin:234.5"
+	ratesStr := "fury:123.2"
+	ratesStrInvalidCoin := "fury:123.2,badcoin:234.5"
 
 	salt, err := generateSalt(32)
 	s.Require().NoError(err)

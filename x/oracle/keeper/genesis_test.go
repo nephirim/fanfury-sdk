@@ -2,15 +2,15 @@ package keeper_test
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	furyapp "github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle"
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	furyapp "github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 
 var (
 	atomExchangeRate        = sdk.MustNewDecFromStr("0.0000001")
-	persistenceExchangeRate = sdk.MustNewDecFromStr("0.0000005")
+	fanfuryExchangeRate = sdk.MustNewDecFromStr("0.0000005")
 )
 
 func (s *KeeperTestSuite) TestOracleExportGenesis() {
@@ -48,8 +48,8 @@ func (s *KeeperTestSuite) TestOracleInitGenesis() {
 			RewardDistributionWindow: 10000,
 			AcceptList: types.DenomList{
 				types.Denom{
-					BaseDenom:   types.PersistenceDenom,
-					SymbolDenom: types.PersistenceSymbol,
+					BaseDenom:   types.FanfuryDenom,
+					SymbolDenom: types.FanfurySymbol,
 					Exponent:    8,
 				},
 				types.Denom{
@@ -68,8 +68,8 @@ func (s *KeeperTestSuite) TestOracleInitGenesis() {
 				ExchangeRate: atomExchangeRate,
 			},
 			types.ExchangeRateTuple{
-				Denom:        types.PersistenceSymbol,
-				ExchangeRate: persistenceExchangeRate,
+				Denom:        types.FanfurySymbol,
+				ExchangeRate: fanfuryExchangeRate,
 			},
 		},
 		MissCounters: []types.MissCounter{
@@ -102,8 +102,8 @@ func (s *KeeperTestSuite) TestOracleInitGenesis() {
 						ExchangeRate: atomExchangeRate,
 					},
 					types.ExchangeRateTuple{
-						Denom:        types.PersistenceSymbol,
-						ExchangeRate: persistenceExchangeRate,
+						Denom:        types.FanfurySymbol,
+						ExchangeRate: fanfuryExchangeRate,
 					},
 				},
 				Voter: valAddr.String(),
@@ -115,8 +115,8 @@ func (s *KeeperTestSuite) TestOracleInitGenesis() {
 						ExchangeRate: atomExchangeRate,
 					},
 					types.ExchangeRateTuple{
-						Denom:        types.PersistenceSymbol,
-						ExchangeRate: persistenceExchangeRate,
+						Denom:        types.FanfurySymbol,
+						ExchangeRate: fanfuryExchangeRate,
 					},
 				},
 				Voter: valAddr2.String(),

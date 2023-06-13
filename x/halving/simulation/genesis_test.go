@@ -1,5 +1,5 @@
 /*
- Copyright [2019] - [2021], PERSISTENCE TECHNOLOGIES PTE. LTD. and the persistenceCore contributors
+ Copyright [2019] - [2021], FANFURY TECHNOLOGIES PTE. LTD. and the fanfuryCore contributors
  SPDX-License-Identifier: Apache-2.0
 */
 
@@ -15,7 +15,7 @@ import (
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/halving/types"
 	"github.com/stretchr/testify/require"
 )
 

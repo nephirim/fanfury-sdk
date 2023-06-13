@@ -4,7 +4,7 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 // SignedBlocksWindow - sliding window for downtime slashing

@@ -11,7 +11,7 @@ import (
 
 var _ tmtypes.PrivValidator = PV{}
 
-// MockPV implements PrivValidator without any safety or persistence.
+// MockPV implements PrivValidator without any safety or fanfury.
 // Only use it for testing.
 type PV struct {
 	PrivKey cryptotypes.PrivKey

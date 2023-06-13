@@ -5,7 +5,7 @@ import (
 	"github.com/cosmos/ibc-go/v6/modules/core/04-channel/types"
 	"github.com/cosmos/ibc-go/v6/modules/core/exported"
 
-	"github.com/incubus-network/fanfury-sdk/v2/utils"
+	"github.com/nephirim/fanfury-sdk/v2/utils"
 )
 
 var _ IBCHandshakeHooks = MultiIBCHandshakeHooks{}

@@ -9,7 +9,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/incubus-network/fanfury-sdk/v2/testutil/network"
+	"github.com/nephirim/fanfury-sdk/v2/testutil/network"
 )
 
 type IntegrationTestSuite struct {

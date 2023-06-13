@@ -12,8 +12,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
 	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/client/cli"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/client/cli"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func (s *IntegrationTestSuite) TestGRPCQueryValidatorsHandler() {

@@ -4,7 +4,7 @@ import (
 	gogotypes "github.com/gogo/protobuf/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types"
 )
 
 // get the delegator withdraw address, defaulting to the delegator address

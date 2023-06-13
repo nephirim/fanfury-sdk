@@ -8,7 +8,7 @@ import "staking/v1beta1/staking.proto";
 import "cosmos/base/v1beta1/coin.proto";
 import "cosmos_proto/cosmos.proto";
 
-option go_package = "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types";
+option go_package = "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types";
 
 // Query defines the gRPC querier service.
 service Query {

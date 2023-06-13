@@ -9,9 +9,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // IsValSetSorted reports whether valset is sorted.

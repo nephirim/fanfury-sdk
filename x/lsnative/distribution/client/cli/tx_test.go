@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	"github.com/cosmos/cosmos-sdk/testutil"
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	"github.com/incubus-network/fanfury-sdk/v2/app/params"
+	"github.com/nephirim/fanfury-sdk/v2/app/params"
 
 	"github.com/stretchr/testify/require"
 

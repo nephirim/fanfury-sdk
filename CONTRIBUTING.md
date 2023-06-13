@@ -13,26 +13,26 @@
     - [Code Owner Membership](#code-owner-membership)
     - [Concept & Feature Approval Process](#concept--feature-approval-process)
 
-Thank you for considering making contributions to the Persistence SDK and related repositories!
+Thank you for considering making contributions to the Fanfury SDK and related repositories!
 
 Contributing to this repo can mean many things such as participating in discussion or proposing code changes. To ensure
 a smooth workflow for all contributors, the general procedure for contributing has been established:
 
-1. Start by browsing [new issues](https://github.com/incubus-network/fanfury-sdk/issues). If you are looking for
+1. Start by browsing [new issues](https://github.com/nephirim/fanfury-sdk/issues). If you are looking for
    something interesting or if you have something in your mind, there is a chance it was has been discussed.
 
 - Looking for a good place to start contributing? How about checking out
-  some [good first issues](https://github.com/incubus-network/fanfury-sdk/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+  some [good first issues](https://github.com/nephirim/fanfury-sdk/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
   ?
 
 2. Determine whether a GitHub issue or discussion is more appropriate for your needs:
 1. If you want to propose something new that requires specification or an additional design, or you would like to change
-   a process, start with a [new discussion](https://github.com/incubus-network/fanfury-sdk/discussions/new). With
+   a process, start with a [new discussion](https://github.com/nephirim/fanfury-sdk/discussions/new). With
    discussions, we can better handle the design process using discussion threads. A discussion usually leads to one or
    more issues.
 2. If the issue you want addressed is a specific proposal or a bug, then open
-   a [new issue](https://github.com/incubus-network/fanfury-sdk/issues/new/choose).
-3. Review existing [issues](https://github.com/incubus-network/fanfury-sdk/issues) to find an issue you'd like to help
+   a [new issue](https://github.com/nephirim/fanfury-sdk/issues/new/choose).
+3. Review existing [issues](https://github.com/nephirim/fanfury-sdk/issues) to find an issue you'd like to help
    with.
 3. Participate in thoughtful discussion on that issue.
 4. If you would like to contribute:
@@ -50,14 +50,14 @@ taken place in a GitHub issue, that PR runs a high likelihood of being rejected.
 
 ## Architecture Decision Records (ADR)
 
-When proposing an architecture decision for the Persistence SDK, please start by opening
-an [issue](https://github.com/incubus-network/fanfury-sdk/issues/new/choose) or
-a [discussion](https://github.com/incubus-network/fanfury-sdk/discussions/new) with a summary of the proposal. Once
+When proposing an architecture decision for the Fanfury SDK, please start by opening
+an [issue](https://github.com/nephirim/fanfury-sdk/issues/new/choose) or
+a [discussion](https://github.com/nephirim/fanfury-sdk/discussions/new) with a summary of the proposal. Once
 the proposal has been discussed and there is rough alignment on a high-level approach to the design,
-the [ADR creation process](hhttps://github.com/persistenceOne/assetMantle/blob/puneet2019/adr/docs/adr/PROCESS.md) can
+the [ADR creation process](hhttps://github.com/nephirim/assetMantle/blob/puneet2019/adr/docs/adr/PROCESS.md) can
 begin. We are following this process to ensure all involved parties are in agreement before any party begins coding the
 proposed implementation. If you would like to see examples of how these are written, please refer to the
-current [ADRs](https://github.com/persistenceOne/assetMantle/tree/puneet2019/adr/docs/adr).
+current [ADRs](https://github.com/nephirim/assetMantle/tree/puneet2019/adr/docs/adr).
 
 ## Development Procedure
 
@@ -65,9 +65,9 @@ current [ADRs](https://github.com/persistenceOne/assetMantle/tree/puneet2019/adr
 - `master` must never fail `make lint test test-race`.
 - No `--force` onto `master` (except when reverting a broken commit, which should seldom happen).
 - Create a branch to start a wok:
-    - Fork the repo (core developers must create a branch directly in the Persistence SDK repo), branch from the HEAD
+    - Fork the repo (core developers must create a branch directly in the Fanfury SDK repo), branch from the HEAD
       of `master`, make some commits, and submit a PR to `master`.
-    - For core developers working within the `persistence-sdk` repo, follow branch name conventions to ensure a clear
+    - For core developers working within the `fanfury-sdk` repo, follow branch name conventions to ensure a clear
       ownership of branches: `{moniker}/{issue#}-branch-name`.
     - See [Branching Model](#branching-model-and-release) for more details.
 - Be sure to run `make format` before every commit. The easiest way to do this is had your editor run it for you upon
@@ -78,7 +78,7 @@ Code is merged into master through pull request procedure.
 
 ### Testing
 
-Tests can be executed by running `make test` at the top level of the Persistence SDK repository.
+Tests can be executed by running `make test` at the top level of the Fanfury SDK repository.
 
 ### Pull Requests
 
@@ -140,7 +140,7 @@ their handle next to specific items. In addition, use the following review expla
 
 ### Updating Documentation
 
-If you open a PR on the Persistence SDK, it is mandatory to update the relevant documentation in `/docs`.
+If you open a PR on the Fanfury SDK, it is mandatory to update the relevant documentation in `/docs`.
 
 - If your change relates to the core SDK (baseapp, store, ...), be sure to update the content in `docs/basics/`
   , `docs/core/` and/or `docs/building-modules/` folders.
@@ -162,7 +162,7 @@ on `go mod tidy -v`.
 ## Protobuf
 
 We use [Protocol Buffers](https://developers.google.com/protocol-buffers) along
-with [gogoproto](https://github.com/gogo/protobuf) to generate code for use in Persistence SDK.
+with [gogoproto](https://github.com/gogo/protobuf) to generate code for use in Fanfury SDK.
 
 For deterministic behavior around Protobuf tooling, everything is containerized using Docker. Make sure to have Docker
 installed on your machine, or head to [Docker's website](https://docs.docker.com/get-docker/) to install it.
@@ -197,11 +197,11 @@ For example, in vscode your `.vscode/settings.json` should look like:
 User-facing repos should adhere to the trunk based development branching model: https://trunkbaseddevelopment.com/. User
 branches should start with a user name, example: `{moniker}/{issue#}-branch-name`.
 
-The Persistence SDK repository is
+The Fanfury SDK repository is
 a [multi Go module](https://github.com/golang/go/wiki/Modules#is-it-possible-to-add-a-module-to-a-multi-module-repository)
 repository. It means that we have more than one Go module in a single repository.
 
-The Persistence SDK utilizes [semantic versioning](https://semver.org/).
+The Fanfury SDK utilizes [semantic versioning](https://semver.org/).
 
 ### PR Targeting
 
@@ -244,20 +244,20 @@ metric. Serving as a code owner is a symbol of great trust from the community of
 
 ## Concept & Feature Approval Process
 
-The process for how Persistence SDK maintainers take features and ADRs from concept to release is broken up into three
+The process for how Fanfury SDK maintainers take features and ADRs from concept to release is broken up into three
 distinct stages: **Strategy Discovery**, **Concept Approval**, and
 **Implementation & Release Approval**
 
 ### Strategy Discovery
 
-* Develop long term priorities, strategy and roadmap for the Persistence SDK
+* Develop long term priorities, strategy and roadmap for the Fanfury SDK
 * Release committee not yet defined as there is already a roadmap that can be used for the time being
 
 ### Concept Approval
 
-* Architecture Decision Records (ADRs) may be proposed by any contributors or maintainers of the Persistence SDK, and
+* Architecture Decision Records (ADRs) may be proposed by any contributors or maintainers of the Fanfury SDK, and
   should follow the guidelines outlined in the
-  [ADR Creation Process](https://github.com/incubus-network/fanfury-sdk/blob/master/docs/architecture/PROCESS.md)
+  [ADR Creation Process](https://github.com/nephirim/fanfury-sdk/blob/master/docs/architecture/PROCESS.md)
 * After proposal, a time bound period for Request for Comment (RFC) on ADRs commences
 * ADRs are intended to be iterative, and may be merged into `master` while still in a `Proposed` status
 

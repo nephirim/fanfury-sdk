@@ -13,11 +13,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
 	sdkdistr "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 type KeeperTestSuite struct {

@@ -2,7 +2,7 @@ package keeper_test
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 )
 
 func (s *KeeperTestSuite) TestQueryExchangeRate() {
@@ -12,10 +12,10 @@ func (s *KeeperTestSuite) TestQueryExchangeRate() {
 	s.Require().Error(err)
 	s.Require().Nil(resp)
 
-	// Set exchange rate for XPRT.
-	s.app.OracleKeeper.SetExchangeRate(s.ctx, types.PersistenceSymbol, sdk.OneDec())
+	// Set exchange rate for FURY.
+	s.app.OracleKeeper.SetExchangeRate(s.ctx, types.FanfurySymbol, sdk.OneDec())
 
-	resp, err = s.queryClient.ExchangeRate(s.ctx.Context(), &types.QueryExchangeRateRequest{Denom: types.PersistenceSymbol})
+	resp, err = s.queryClient.ExchangeRate(s.ctx.Context(), &types.QueryExchangeRateRequest{Denom: types.FanfurySymbol})
 	s.Require().NoError(err)
 	s.Require().Equal(resp.ExchangeRate, sdk.OneDec().String())
 }
@@ -26,8 +26,8 @@ func (s *KeeperTestSuite) TestQueryAllExchangeRate() {
 	s.Require().NoError(err)
 	s.Require().Nil(resp.ExchangeRates)
 
-	// Set exchange rate for XPRT.
-	s.app.OracleKeeper.SetExchangeRate(s.ctx, types.PersistenceSymbol, sdk.OneDec())
+	// Set exchange rate for FURY.
+	s.app.OracleKeeper.SetExchangeRate(s.ctx, types.FanfurySymbol, sdk.OneDec())
 	// Set exchange rate for ATOM.
 	s.app.OracleKeeper.SetExchangeRate(s.ctx, types.AtomSymbol, sdk.OneDec())
 

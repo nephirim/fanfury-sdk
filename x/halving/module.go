@@ -1,5 +1,5 @@
 /*
- Copyright [2019] - [2021], PERSISTENCE TECHNOLOGIES PTE. LTD. and the persistenceCore contributors
+ Copyright [2019] - [2021], FANFURY TECHNOLOGIES PTE. LTD. and the fanfuryCore contributors
  SPDX-License-Identifier: Apache-2.0
 */
 
@@ -19,10 +19,10 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/gorilla/mux"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/client/cli"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/simulation"
-	"github.com/incubus-network/fanfury-sdk/v2/x/halving/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/halving/client/cli"
+	"github.com/nephirim/fanfury-sdk/v2/x/halving/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/x/halving/simulation"
+	"github.com/nephirim/fanfury-sdk/v2/x/halving/types"
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 )

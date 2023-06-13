@@ -1,15 +1,15 @@
 /*
- Copyright [2019] - [2021], PERSISTENCE TECHNOLOGIES PTE. LTD. and the persistenceCore contributors
+ Copyright [2019] - [2021], FANFURY TECHNOLOGIES PTE. LTD. and the fanfuryCore contributors
  SPDX-License-Identifier: Apache-2.0
 */
 
 syntax = "proto3";
-package persistence.halving.v1beta1;
+package fanfury.halving.v1beta1;
 
 import "gogoproto/gogo.proto";
-import "persistence/halving/v1beta1/halving.proto";
+import "fanfury/halving/v1beta1/halving.proto";
 
-option go_package = "github.com/incubus-network/fanfury-sdk/v2/x/halving/types";
+option go_package = "github.com/nephirim/fanfury-sdk/v2/x/halving/types";
 
 // GenesisState defines the halving module's genesis state.
 message GenesisState {

@@ -9,10 +9,10 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
 	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/testslashing"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/testslashing"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 func TestNewQuerier(t *testing.T) {

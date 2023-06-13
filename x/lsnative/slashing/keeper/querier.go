@@ -8,7 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	sdkslashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 // NewQuerier creates a new querier for slashing clients.

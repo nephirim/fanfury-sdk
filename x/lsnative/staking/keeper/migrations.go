@@ -3,8 +3,8 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	v043 "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v043"
-	v046 "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
+	v043 "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/migrations/v043"
+	v046 "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
 )
 
 // Migrator is a struct for handling in-place store migrations.

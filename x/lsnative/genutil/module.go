@@ -14,7 +14,7 @@ import (
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil/types"
 )
 
 var (

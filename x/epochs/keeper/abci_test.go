@@ -8,9 +8,9 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	"golang.org/x/exp/maps"
 
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/utils"
-	"github.com/incubus-network/fanfury-sdk/v2/x/epochs/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/utils"
+	"github.com/nephirim/fanfury-sdk/v2/x/epochs/types"
 )
 
 // This test is responsible for testing how epochs increment based off

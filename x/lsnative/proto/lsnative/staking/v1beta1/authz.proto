@@ -5,7 +5,7 @@ import "gogoproto/gogo.proto";
 import "cosmos_proto/cosmos.proto";
 import "cosmos/base/v1beta1/coin.proto";
 
-option go_package = "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types";
+option go_package = "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types";
 
 // StakeAuthorization defines authorization for delegate/undelegate/redelegate.
 //

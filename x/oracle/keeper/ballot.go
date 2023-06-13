@@ -3,7 +3,7 @@ package keeper
 import (
 	"sort"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

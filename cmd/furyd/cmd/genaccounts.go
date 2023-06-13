@@ -14,8 +14,8 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	authvesting "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
-	genutiltypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil"
+	genutiltypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil/types"
 	"github.com/spf13/cobra"
 )
 

@@ -8,10 +8,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestCalculateRewardsBasic(t *testing.T) {

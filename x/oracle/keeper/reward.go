@@ -5,17 +5,17 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 )
 
-// prependXPRTIfUnique pushs `uxprt` denom to the front of the list, if it is not yet included.
-func prependXPRTIfUnique(voteTargets []string) []string {
-	if contains(types.PersistenceDenom, voteTargets) {
+// prependFURYIfUnique pushs `uxprt` denom to the front of the list, if it is not yet included.
+func prependFURYIfUnique(voteTargets []string) []string {
+	if contains(types.FanfuryDenom, voteTargets) {
 		return voteTargets
 	}
 
 	rewardDenoms := make([]string, len(voteTargets)+1)
-	rewardDenoms[0] = types.PersistenceDenom
+	rewardDenoms[0] = types.FanfuryDenom
 	copy(rewardDenoms[1:], voteTargets)
 
 	return rewardDenoms
@@ -47,7 +47,7 @@ func (k Keeper) RewardBallotWinners(
 
 	var periodRewards sdk.DecCoins
 
-	rewardDenoms := prependXPRTIfUnique(voteTargets)
+	rewardDenoms := prependFURYIfUnique(voteTargets)
 	for _, denom := range rewardDenoms {
 		rewardPool := k.GetRewardPool(ctx, denom)
 

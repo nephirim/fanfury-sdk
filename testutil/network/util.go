@@ -20,8 +20,8 @@ import (
 	srvtypes "github.com/cosmos/cosmos-sdk/server/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
-	genutiltypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil"
+	genutiltypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil/types"
 )
 
 func startInProcess(cfg Config, val *Validator) error {

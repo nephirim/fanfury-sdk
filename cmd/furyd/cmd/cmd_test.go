@@ -5,11 +5,11 @@ import (
 	"testing"
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/client/cli"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil/client/cli"
 	"github.com/stretchr/testify/require"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/furyd/cmd"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting/furyapp"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting/furyapp/furyd/cmd"
 )
 
 func TestInitCmd(t *testing.T) {

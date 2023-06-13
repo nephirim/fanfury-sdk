@@ -23,7 +23,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
@@ -31,8 +31,8 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/helpers"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting/furyapp/helpers"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting/mock"
 )
 
 // DefaultConsensusParams defines the default Tendermint consensus params used in

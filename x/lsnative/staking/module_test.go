@@ -11,8 +11,8 @@ import (
 	dbm "github.com/tendermint/tm-db"
 
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestItCreatesModuleAccountOnInitBlock(t *testing.T) {

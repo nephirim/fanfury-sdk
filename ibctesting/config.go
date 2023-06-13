@@ -7,7 +7,7 @@ import (
 	channeltypes "github.com/cosmos/ibc-go/v6/modules/core/04-channel/types"
 	"github.com/cosmos/ibc-go/v6/modules/core/exported"
 	ibctmtypes "github.com/cosmos/ibc-go/v6/modules/light-clients/07-tendermint/types"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting/mock"
 )
 
 type ClientConfig interface {

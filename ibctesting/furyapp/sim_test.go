@@ -21,9 +21,9 @@ import (
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
-	slashingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	distrtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types"
+	slashingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/types"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
@@ -32,7 +32,7 @@ import (
 
 	ibctransfertypes "github.com/cosmos/ibc-go/v6/modules/apps/transfer/types"
 	ibchost "github.com/cosmos/ibc-go/v6/modules/core/24-host"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/helpers"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting/furyapp/helpers"
 )
 
 // Get flags every time the simulator is run

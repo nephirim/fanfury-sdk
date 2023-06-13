@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -13,8 +13,8 @@ func TestDenomString(t *testing.T) {
 		expectedStr string
 	}{
 		{
-			denom:       types.DenomPersistence,
-			expectedStr: "base_denom: uxprt\nsymbol_denom: XPRT\nexponent: 6\n",
+			denom:       types.DenomFanfury,
+			expectedStr: "base_denom: uxprt\nsymbol_denom: FURY\nexponent: 6\n",
 		},
 		{
 			denom:       types.DenomAtom,
@@ -34,12 +34,12 @@ func TestDenomEqual(t *testing.T) {
 		equal         bool
 	}{
 		{
-			denom:         types.DenomPersistence,
-			denomCompared: types.DenomPersistence,
+			denom:         types.DenomFanfury,
+			denomCompared: types.DenomFanfury,
 			equal:         true,
 		},
 		{
-			denom:         types.DenomPersistence,
+			denom:         types.DenomFanfury,
 			denomCompared: types.DenomAtom,
 			equal:         false,
 		},
@@ -50,7 +50,7 @@ func TestDenomEqual(t *testing.T) {
 		},
 		{
 			denom:         types.DenomAtom,
-			denomCompared: types.DenomPersistence,
+			denomCompared: types.DenomFanfury,
 			equal:         false,
 		},
 	}
@@ -66,12 +66,12 @@ func TestDenomListString(t *testing.T) {
 		expectedStr string
 	}{
 		{
-			denomList:   types.DenomList{types.DenomPersistence},
-			expectedStr: "base_denom: uxprt\nsymbol_denom: XPRT\nexponent: 6",
+			denomList:   types.DenomList{types.DenomFanfury},
+			expectedStr: "base_denom: uxprt\nsymbol_denom: FURY\nexponent: 6",
 		},
 		{
-			denomList:   types.DenomList{types.DenomPersistence, types.DenomAtom},
-			expectedStr: "base_denom: uxprt\nsymbol_denom: XPRT\nexponent: 6\n\nbase_denom: ibc/4A17832B26BF318D052563EFFE677C1DE11DF8CE104F00204860F3E3439818B2\nsymbol_denom: ATOM\nexponent: 6",
+			denomList:   types.DenomList{types.DenomFanfury, types.DenomAtom},
+			expectedStr: "base_denom: uxprt\nsymbol_denom: FURY\nexponent: 6\n\nbase_denom: ibc/4A17832B26BF318D052563EFFE677C1DE11DF8CE104F00204860F3E3439818B2\nsymbol_denom: ATOM\nexponent: 6",
 		},
 	}
 
@@ -87,17 +87,17 @@ func TestDenomListContains(t *testing.T) {
 		symbolInList bool
 	}{
 		{
-			denomList:    types.DenomList{types.DenomPersistence},
-			denomSymbol:  types.DenomPersistence.SymbolDenom,
+			denomList:    types.DenomList{types.DenomFanfury},
+			denomSymbol:  types.DenomFanfury.SymbolDenom,
 			symbolInList: true,
 		},
 		{
-			denomList:    types.DenomList{types.DenomPersistence},
+			denomList:    types.DenomList{types.DenomFanfury},
 			denomSymbol:  types.DenomAtom.SymbolDenom,
 			symbolInList: false,
 		},
 		{
-			denomList:    types.DenomList{types.DenomPersistence, types.DenomAtom},
+			denomList:    types.DenomList{types.DenomFanfury, types.DenomAtom},
 			denomSymbol:  types.DenomAtom.SymbolDenom,
 			symbolInList: true,
 		},

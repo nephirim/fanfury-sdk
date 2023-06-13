@@ -5,9 +5,9 @@ import (
 )
 
 const (
-	PersistenceDenom    string = "uxprt"
-	PersistenceSymbol   string = "XPRT"
-	PersistenceExponent        = uint32(6)
+	FanfuryDenom    string = "uxprt"
+	FanfurySymbol   string = "FURY"
+	FanfuryExponent        = uint32(6)
 	BlocksPerMinute            = uint64(10)
 	BlocksPerHour              = BlocksPerMinute * 60
 	BlocksPerDay               = BlocksPerHour * 24

@@ -7,11 +7,11 @@ import (
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting"
-	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
-	icqtypes "github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting"
+	"github.com/nephirim/fanfury-sdk/v2/x/interchainquery/keeper"
+	icqtypes "github.com/nephirim/fanfury-sdk/v2/x/interchainquery/types"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 const TestOwnerAddress = "cosmos17dtl0mjt3t77kpuhg2edqzjpszulwhgzuj9ljs"

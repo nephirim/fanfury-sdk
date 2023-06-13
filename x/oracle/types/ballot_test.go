@@ -20,19 +20,19 @@ func TestToMap(t *testing.T) {
 		[]VoteForTally{
 			{
 				Voter:        sdk.ValAddress(secp256k1.GenPrivKey().PubKey().Address()),
-				Denom:        PersistenceDenom,
+				Denom:        FanfuryDenom,
 				ExchangeRate: sdk.NewDec(1600),
 				Power:        100,
 			},
 			{
 				Voter:        sdk.ValAddress(secp256k1.GenPrivKey().PubKey().Address()),
-				Denom:        PersistenceDenom,
+				Denom:        FanfuryDenom,
 				ExchangeRate: sdk.ZeroDec(),
 				Power:        100,
 			},
 			{
 				Voter:        sdk.ValAddress(secp256k1.GenPrivKey().PubKey().Address()),
-				Denom:        PersistenceDenom,
+				Denom:        FanfuryDenom,
 				ExchangeRate: sdk.NewDec(1500),
 				Power:        100,
 			},
@@ -76,7 +76,7 @@ func TestPBPower(t *testing.T) {
 		power := sk.Validator(ctx, valAccAddrs[i]).GetConsensusPower(sdk.DefaultPowerReduction)
 		vote := NewVoteForTally(
 			sdk.ZeroDec(),
-			PersistenceDenom,
+			FanfuryDenom,
 			valAccAddrs[i],
 			power,
 		)
@@ -94,7 +94,7 @@ func TestPBPower(t *testing.T) {
 	faceValAddr := sdk.ValAddress(pubKey.Address())
 	fakeVote := NewVoteForTally(
 		sdk.OneDec(),
-		PersistenceDenom,
+		FanfuryDenom,
 		faceValAddr,
 		0,
 	)
@@ -166,7 +166,7 @@ func TestPBWeightedMedian(t *testing.T) {
 
 			vote := NewVoteForTally(
 				sdk.NewDec(input),
-				PersistenceDenom,
+				FanfuryDenom,
 				valAddr,
 				power,
 			)
@@ -250,7 +250,7 @@ func TestPBStandardDeviation(t *testing.T) {
 
 			vote := NewVoteForTally(
 				input,
-				PersistenceDenom,
+				FanfuryDenom,
 				valAddr,
 				power,
 			)
@@ -273,19 +273,19 @@ func TestPBStandardDeviation_Overflow(t *testing.T) {
 	pb := ExchangeRateBallot{
 		NewVoteForTally(
 			sdk.OneDec(),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddr,
 			2,
 		),
 		NewVoteForTally(
 			sdk.NewDec(1234),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddr,
 			2,
 		),
 		NewVoteForTally(
 			overflowRate,
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddr,
 			1,
 		),
@@ -304,23 +304,23 @@ func TestBallotMapToSlice(t *testing.T) {
 	pb := ExchangeRateBallot{
 		NewVoteForTally(
 			sdk.NewDec(1234),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddress[0],
 			2,
 		),
 		NewVoteForTally(
 			sdk.NewDec(12345),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddress[0],
 			1,
 		),
 	}
 
 	ballotSlice := BallotMapToSlice(map[string]ExchangeRateBallot{
-		PersistenceDenom: pb,
+		FanfuryDenom: pb,
 		AtomDenom:        pb,
 	})
-	require.Equal(t, []BallotDenom{{Ballot: pb, Denom: AtomDenom}, {Ballot: pb, Denom: PersistenceDenom}}, ballotSlice)
+	require.Equal(t, []BallotDenom{{Ballot: pb, Denom: AtomDenom}, {Ballot: pb, Denom: FanfuryDenom}}, ballotSlice)
 }
 
 func TestExchangeRateBallotSwap(t *testing.T) {
@@ -329,13 +329,13 @@ func TestExchangeRateBallotSwap(t *testing.T) {
 	voteTallies := []VoteForTally{
 		NewVoteForTally(
 			sdk.NewDec(1234),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddress[0],
 			2,
 		),
 		NewVoteForTally(
 			sdk.NewDec(12345),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddress[1],
 			1,
 		),
@@ -355,13 +355,13 @@ func TestStandardDeviationUnsorted(t *testing.T) {
 	pb := ExchangeRateBallot{
 		NewVoteForTally(
 			sdk.NewDec(1234),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddress[0],
 			2,
 		),
 		NewVoteForTally(
 			sdk.NewDec(12),
-			PersistenceSymbol,
+			FanfurySymbol,
 			valAddress[0],
 			1,
 		),

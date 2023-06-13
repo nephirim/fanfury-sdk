@@ -9,9 +9,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/simulation"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	furyappparams "github.com/nephirim/fanfury-sdk/v2/app/params"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/simulation"
 )
 
 func TestProposalContents(t *testing.T) {

@@ -2,10 +2,10 @@ package keeper_test
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/ibctesting"
-	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/ibctesting"
+	"github.com/nephirim/fanfury-sdk/v2/x/interchainquery/keeper"
 )
 
 func (suite *KeeperTestSuite) TestEndBlocker() {

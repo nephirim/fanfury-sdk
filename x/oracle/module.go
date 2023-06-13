@@ -17,9 +17,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/client/cli"
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/keeper"
-	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/client/cli"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/keeper"
+	"github.com/nephirim/fanfury-sdk/v2/x/oracle/types"
 )
 
 var (

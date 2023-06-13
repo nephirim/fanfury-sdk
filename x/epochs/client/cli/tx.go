@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 
 	// "github.com/cosmos/cosmos-sdk/client/flags".
-	"github.com/incubus-network/fanfury-sdk/v2/x/epochs/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/epochs/types"
 )
 
 // GetTxCmd returns the transaction commands for this module.

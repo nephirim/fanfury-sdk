@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/simulation"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing/simulation"
 )
 
 func TestParamChanges(t *testing.T) {

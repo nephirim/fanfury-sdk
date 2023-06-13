@@ -6,10 +6,10 @@ import (
 	v046gov "github.com/cosmos/cosmos-sdk/x/gov/migrations/v046"
 	govv1beta1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
-	v043staking "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v043"
-	v046staking "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
-	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/genutil/types"
+	v043staking "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/migrations/v043"
+	v046staking "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/migrations/v046"
+	stakingtypes "github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // Migrate migrates exported state from v0.43 to a v0.46 genesis state.

@@ -10,10 +10,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/incubus-network/fanfury-sdk/v2/app"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
-	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	"github.com/nephirim/fanfury-sdk/v2/app"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/slashing"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/nephirim/fanfury-sdk/v2/x/lsnative/staking/teststaking"
 )
 
 func TestBeginBlocker(t *testing.T) {

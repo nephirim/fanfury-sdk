@@ -9,7 +9,7 @@ import "distribution/v1beta1/distribution.proto";
 import "cosmos/distribution/v1beta1/query.proto";
 import "cosmos_proto/cosmos.proto";
 
-option go_package = "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types";
+option go_package = "github.com/nephirim/fanfury-sdk/v2/x/lsnative/distribution/types";
 
 // Query defines the gRPC querier service for distribution module.
 service Query {

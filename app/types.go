@@ -43,4 +43,4 @@ type App interface {
 	SimulationManager() *module.SimulationManager
 }
 
-const Bech32Prefix = "persistence"
+const Bech32Prefix = "fanfury"
