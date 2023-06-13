@@ -11,9 +11,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/app"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func init() {

@@ -3,17 +3,17 @@ package furyapp
 import (
 	"encoding/json"
 	"fmt"
-	"os"
-
-	"github.com/tendermint/tendermint/libs/log"
-	dbm "github.com/tendermint/tm-db"
+	"io/ioutil"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/kv"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp/helpers"
+	"github.com/tendermint/tendermint/libs/log"
+	dbm "github.com/tendermint/tm-db"
+
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp/helpers"
 )
 
 // SetupSimulation creates the config, db (levelDB), temporary directory and logger for
@@ -34,12 +34,12 @@ func SetupSimulation(dirPrefix, dbName string) (simtypes.Config, dbm.DB, string,
 		logger = log.NewNopLogger()
 	}
 
-	dir, err := os.MkdirTemp("", dirPrefix)
+	dir, err := ioutil.TempDir("", dirPrefix)
 	if err != nil {
 		return simtypes.Config{}, nil, "", nil, false, err
 	}
 
-	db, err := dbm.NewDB(dbName, dbm.BackendType(config.DBBackend), dir)
+	db, err := sdk.NewLevelDB(dbName, dir) //nolint:staticcheck // this is clearer.
 	if err != nil {
 		return simtypes.Config{}, nil, "", nil, false, err
 	}
@@ -56,7 +56,7 @@ func SimulationOperations(app App, cdc codec.JSONCodec, config simtypes.Config) 
 	}
 
 	if config.ParamsFile != "" {
-		bz, err := os.ReadFile(config.ParamsFile)
+		bz, err := ioutil.ReadFile(config.ParamsFile)
 		if err != nil {
 			panic(err)
 		}
@@ -69,7 +69,6 @@ func SimulationOperations(app App, cdc codec.JSONCodec, config simtypes.Config) 
 
 	simState.ParamChanges = app.SimulationManager().GenerateParamChanges(config.Seed)
 	simState.Contents = app.SimulationManager().GetProposalContents(simState)
-
 	return app.SimulationManager().WeightedOperations(simState)
 }
 
@@ -80,31 +79,27 @@ func CheckExportSimulation(
 ) error {
 	if config.ExportStatePath != "" {
 		fmt.Println("exporting app state...")
-
 		exported, err := app.ExportAppStateAndValidators(false, nil)
 		if err != nil {
 			return err
 		}
 
-		if err := os.WriteFile(config.ExportStatePath, []byte(exported.AppState), 0600); err != nil {
+		if err := ioutil.WriteFile(config.ExportStatePath, []byte(exported.AppState), 0o600); err != nil {
 			return err
 		}
 	}
 
 	if config.ExportParamsPath != "" {
 		fmt.Println("exporting simulation params...")
-
 		paramsBz, err := json.MarshalIndent(params, "", " ")
-
 		if err != nil {
 			return err
 		}
 
-		if err := os.WriteFile(config.ExportParamsPath, paramsBz, 0600); err != nil {
+		if err := ioutil.WriteFile(config.ExportParamsPath, paramsBz, 0o600); err != nil {
 			return err
 		}
 	}
-
 	return nil
 }
 

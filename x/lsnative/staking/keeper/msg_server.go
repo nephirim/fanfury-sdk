@@ -19,7 +19,7 @@ import (
 	vesting "github.com/cosmos/cosmos-sdk/x/auth/vesting/exported"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 type msgServer struct {

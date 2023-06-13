@@ -41,10 +41,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp/params"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/app"
+	"github.com/incubus-network/fanfury-sdk/v2/app/params"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // package-wide network lock to only allow one test network at a time

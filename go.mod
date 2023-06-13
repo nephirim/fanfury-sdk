@@ -1,4 +1,4 @@
-module github.com/persistenceOne/persistence-sdk
+module github.com/incubus-network/fanfury-sdk
 
 go 1.19
 

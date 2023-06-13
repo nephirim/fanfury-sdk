@@ -4,11 +4,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"math/rand"
+	"os"
 	"time"
 
-	"cosmossdk.io/math"
+	tmjson "github.com/tendermint/tendermint/libs/json"
+	tmtypes "github.com/tendermint/tendermint/types"
+
+	sdkmath "cosmossdk.io/math"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -17,11 +20,9 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
-	tmjson "github.com/tendermint/tendermint/libs/json"
-	tmtypes "github.com/tendermint/tendermint/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 
-	furyappparams "github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp/params"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
 )
 
 // AppStateFn returns the initial application state using a genesis or the simulation parameters.
@@ -37,6 +38,7 @@ func AppStateFn(cdc codec.JSONCodec, simManager *module.SimulationManager) simty
 		}
 
 		chainID = config.ChainID
+
 		switch {
 		case config.ParamsFile != "" && config.GenesisFile != "":
 			panic("cannot provide both a genesis file and a params file")
@@ -56,7 +58,8 @@ func AppStateFn(cdc codec.JSONCodec, simManager *module.SimulationManager) simty
 
 		case config.ParamsFile != "":
 			appParams := make(simtypes.AppParams)
-			bz, err := ioutil.ReadFile(config.ParamsFile)
+			bz, err := os.ReadFile(config.ParamsFile)
+
 			if err != nil {
 				panic(err)
 			}
@@ -65,6 +68,7 @@ func AppStateFn(cdc codec.JSONCodec, simManager *module.SimulationManager) simty
 			if err != nil {
 				panic(err)
 			}
+
 			appState, simAccs = AppStateRandomizedFn(simManager, r, cdc, accs, genesisTimestamp, appParams)
 
 		default:
@@ -74,6 +78,7 @@ func AppStateFn(cdc codec.JSONCodec, simManager *module.SimulationManager) simty
 
 		rawState := make(map[string]json.RawMessage)
 		err := json.Unmarshal(appState, &rawState)
+
 		if err != nil {
 			panic(err)
 		}
@@ -85,17 +90,21 @@ func AppStateFn(cdc codec.JSONCodec, simManager *module.SimulationManager) simty
 
 		stakingState := new(stakingtypes.GenesisState)
 		err = cdc.UnmarshalJSON(stakingStateBz, stakingState)
+
 		if err != nil {
 			panic(err)
 		}
 		// compute not bonded balance
 		notBondedTokens := sdk.ZeroInt()
+
 		for _, val := range stakingState.Validators {
 			if val.Status != sdkstaking.Unbonded {
 				continue
 			}
+
 			notBondedTokens = notBondedTokens.Add(val.GetTokens())
 		}
+
 		notBondedCoins := sdk.NewCoin(stakingState.Params.BondDenom, notBondedTokens)
 		// edit bank state to make it have the not bonded pool tokens
 		bankStateBz, ok := rawState[banktypes.ModuleName]
@@ -103,16 +112,31 @@ func AppStateFn(cdc codec.JSONCodec, simManager *module.SimulationManager) simty
 		if !ok {
 			panic("bank genesis state is missing")
 		}
+
 		bankState := new(banktypes.GenesisState)
 		err = cdc.UnmarshalJSON(bankStateBz, bankState)
+
 		if err != nil {
 			panic(err)
 		}
 
-		bankState.Balances = append(bankState.Balances, banktypes.Balance{
-			Address: authtypes.NewModuleAddress(stakingtypes.NotBondedPoolName).String(),
-			Coins:   sdk.NewCoins(notBondedCoins),
-		})
+		stakingAddr := authtypes.NewModuleAddress(stakingtypes.NotBondedPoolName).String()
+
+		var found bool
+
+		for _, balance := range bankState.Balances {
+			if balance.Address == stakingAddr {
+				found = true
+				break
+			}
+		}
+
+		if !found {
+			bankState.Balances = append(bankState.Balances, banktypes.Balance{
+				Address: stakingAddr,
+				Coins:   sdk.NewCoins(notBondedCoins),
+			})
+		}
 
 		// change appState back
 		rawState[stakingtypes.ModuleName] = cdc.MustMarshalJSON(stakingState)
@@ -123,6 +147,7 @@ func AppStateFn(cdc codec.JSONCodec, simManager *module.SimulationManager) simty
 		if err != nil {
 			panic(err)
 		}
+
 		return appState, simAccs, chainID, genesisTimestamp
 	}
 }
@@ -139,6 +164,7 @@ func AppStateRandomizedFn(
 	// generate a random amount of initial stake coins and a random initial
 	// number of bonded accounts
 	var initialStake, numInitiallyBonded int64
+
 	appParams.GetOrGenerate(
 		cdc, furyappparams.StakePerAccount, &initialStake, r,
 		func(r *rand.Rand) { initialStake = r.Int63n(1e12) },
@@ -167,7 +193,7 @@ func AppStateRandomizedFn(
 		Rand:         r,
 		GenState:     genesisState,
 		Accounts:     accs,
-		InitialStake: math.NewInt(initialStake),
+		InitialStake: sdkmath.NewInt(initialStake),
 		NumBonded:    numInitiallyBonded,
 		GenTimestamp: genesisTimestamp,
 	}
@@ -185,7 +211,7 @@ func AppStateRandomizedFn(
 // AppStateFromGenesisFileFn util function to generate the genesis AppState
 // from a genesis.json file.
 func AppStateFromGenesisFileFn(r io.Reader, cdc codec.JSONCodec, genesisFile string) (tmtypes.GenesisDoc, []simtypes.Account) {
-	bytes, err := ioutil.ReadFile(genesisFile)
+	bytes, err := os.ReadFile(genesisFile)
 	if err != nil {
 		panic(err)
 	}
@@ -199,6 +225,7 @@ func AppStateFromGenesisFileFn(r io.Reader, cdc codec.JSONCodec, genesisFile str
 
 	var appState GenesisState
 	err = json.Unmarshal(genesis.AppState, &appState)
+
 	if err != nil {
 		panic(err)
 	}
@@ -209,6 +236,7 @@ func AppStateFromGenesisFileFn(r io.Reader, cdc codec.JSONCodec, genesisFile str
 	}
 
 	newAccs := make([]simtypes.Account, len(authGenesis.Accounts))
+
 	for i, acc := range authGenesis.Accounts {
 		// Pick a random private key, since we don't know the actual key
 		// This should be fine as it's only used for mock Tendermint validators

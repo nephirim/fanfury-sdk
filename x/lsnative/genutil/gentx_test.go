@@ -14,12 +14,12 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp/helpers"
-	furyappparams "github.com/persistenceOne/persistence-sdk/v2/furyapp/params"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/genutil/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/app"
+	"github.com/incubus-network/fanfury-sdk/v2/app/helpers"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/genutil/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 var (

@@ -5,9 +5,9 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func BenchmarkValidateGenesis10Validators(b *testing.B) {

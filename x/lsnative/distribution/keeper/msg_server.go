@@ -7,7 +7,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
 )
 
 type msgServer struct {

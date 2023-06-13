@@ -256,7 +256,7 @@ import (
 	dbm "github.com/tendermint/tm-db"
 
 	"github.com/cosmos/ibc-go/v6/modules/apps/transfer/furyapp"
-	ibctesting "github.com/persistenceOne/persistence-sdk/v2/ibctesting"
+	ibctesting "github.com/incubus-network/fanfury-sdk/v2/ibctesting"
 )
 
 func SetupTransferTestingApp() (ibctesting.TestingApp, map[string]json.RawMessage) {

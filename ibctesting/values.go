@@ -13,7 +13,7 @@ import (
 	connectiontypes "github.com/cosmos/ibc-go/v6/modules/core/03-connection/types"
 	commitmenttypes "github.com/cosmos/ibc-go/v6/modules/core/23-commitment/types"
 	ibctmtypes "github.com/cosmos/ibc-go/v6/modules/light-clients/07-tendermint/types"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/mock"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 )
 
 const (

@@ -17,7 +17,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	capabilitykeeper "github.com/cosmos/cosmos-sdk/x/capability/keeper"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
@@ -26,8 +26,8 @@ import (
 	dbm "github.com/tendermint/tm-db"
 
 	"github.com/cosmos/ibc-go/v6/modules/core/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp"
-	ibctestingtypes "github.com/persistenceOne/persistence-sdk/v2/ibctesting/types"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
+	ibctestingtypes "github.com/incubus-network/fanfury-sdk/v2/ibctesting/types"
 )
 
 var DefaultTestingAppInit = SetupTestingApp

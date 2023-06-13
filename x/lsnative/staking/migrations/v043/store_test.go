@@ -11,10 +11,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	v042staking "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/migrations/v042"
-	v043staking "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/migrations/v043"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	v042staking "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v042"
+	v043staking "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/migrations/v043"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestStoreMigration(t *testing.T) {

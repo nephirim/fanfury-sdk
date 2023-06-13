@@ -9,10 +9,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	furyapp "github.com/persistenceOne/persistence-sdk/v2/furyapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/testslashing"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
+	furyapp "github.com/incubus-network/fanfury-sdk/v2/app"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/testslashing"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
 )
 
 // Test a new validator entering the validator set

@@ -9,11 +9,11 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp/helpers"
-	furyappparams "github.com/persistenceOne/persistence-sdk/v2/furyapp/params"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
-	stakingkeeper "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/app/helpers"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	stakingkeeper "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/keeper"
 )
 
 // Simulation operation weights constants

@@ -7,8 +7,8 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/keeper"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/keeper"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
 )
 
 // BeginBlocker sets the proposer for determining distribution during endblock

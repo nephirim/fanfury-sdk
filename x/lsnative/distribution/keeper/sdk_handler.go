@@ -4,7 +4,7 @@ import (
 	context "context"
 
 	sdkdistr "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
 )
 
 type SdkMsgHandler interface {

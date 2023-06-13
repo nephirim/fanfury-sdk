@@ -11,9 +11,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/kv"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	"github.com/incubus-network/fanfury-sdk/v2/app"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/simulation"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 // nolint:deadcode,unused,varcheck

@@ -4,9 +4,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/testutil"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/testutil"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
 )
 
 // TestSlashAndResetMissCounters added more test cases for slashing, incl. unbonded validators.

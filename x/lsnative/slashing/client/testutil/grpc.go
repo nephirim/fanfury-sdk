@@ -10,7 +10,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
 	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
 )
 
 func (s *IntegrationTestSuite) TestGRPCQueries() {

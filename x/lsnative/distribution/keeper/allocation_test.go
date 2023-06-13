@@ -10,10 +10,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
-	"github.com/persistenceOne/persistence-sdk/v2/furyapp"
-	disttypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/app"
+	disttypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 func TestAllocateTokensToValidatorWithCommission(t *testing.T) {

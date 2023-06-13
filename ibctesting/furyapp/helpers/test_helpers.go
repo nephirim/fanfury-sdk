@@ -2,6 +2,7 @@ package helpers
 
 import (
 	"math/rand"
+	"time"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
@@ -11,20 +12,22 @@ import (
 	authsign "github.com/cosmos/cosmos-sdk/x/auth/signing"
 )
 
-// FuryAppChainID hardcoded chainID for simulation
-const (
-	DefaultGenTxGas = 10000000
-	FuryAppChainID  = "simulation-app"
-)
+// DefaultGenTxGas default gas for tx simulation
+var DefaultGenTxGas = uint64(1000000)
 
-// GenSignedMockTx generates a signed mock transaction.
-func GenSignedMockTx(r *rand.Rand, txConfig client.TxConfig, msgs []sdk.Msg, feeAmt sdk.Coins, gas uint64, chainID string, accNums, accSeqs []uint64, priv ...cryptotypes.PrivKey) (sdk.Tx, error) {
+// FuryAppChainID hardcoded chainID for simulation
+const FuryAppChainID = "simulation-app"
+
+// GenTx generates a signed mock transaction.
+func GenTx(gen client.TxConfig, msgs []sdk.Msg, feeAmt sdk.Coins, gas uint64, chainID string, accNums, accSeqs []uint64, priv ...cryptotypes.PrivKey) (sdk.Tx, error) {
 	sigs := make([]signing.SignatureV2, len(priv))
 
 	// create a random length memo
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+
 	memo := simulation.RandStringOfLength(r, simulation.RandIntBetween(r, 0, 100))
 
-	signMode := txConfig.SignModeHandler().DefaultMode()
+	signMode := gen.SignModeHandler().DefaultMode()
 
 	// 1st round: set SignatureV2 with empty signatures, to set correct
 	// signer infos.
@@ -38,18 +41,15 @@ func GenSignedMockTx(r *rand.Rand, txConfig client.TxConfig, msgs []sdk.Msg, fee
 		}
 	}
 
-	tx := txConfig.NewTxBuilder()
-
+	tx := gen.NewTxBuilder()
 	err := tx.SetMsgs(msgs...)
 	if err != nil {
 		return nil, err
 	}
-
 	err = tx.SetSignatures(sigs...)
 	if err != nil {
 		return nil, err
 	}
-
 	tx.SetMemo(memo)
 	tx.SetFeeAmount(feeAmt)
 	tx.SetGasLimit(gas)
@@ -57,25 +57,19 @@ func GenSignedMockTx(r *rand.Rand, txConfig client.TxConfig, msgs []sdk.Msg, fee
 	// 2nd round: once all signer infos are set, every signer can sign.
 	for i, p := range priv {
 		signerData := authsign.SignerData{
-			Address:       sdk.AccAddress(p.PubKey().Address()).String(),
 			ChainID:       chainID,
 			AccountNumber: accNums[i],
 			Sequence:      accSeqs[i],
-			PubKey:        p.PubKey(),
 		}
-
-		signBytes, err := txConfig.SignModeHandler().GetSignBytes(signMode, signerData, tx.GetTx())
+		signBytes, err := gen.SignModeHandler().GetSignBytes(signMode, signerData, tx.GetTx())
 		if err != nil {
 			panic(err)
 		}
-
 		sig, err := p.Sign(signBytes)
 		if err != nil {
 			panic(err)
 		}
-
 		sigs[i].Data.(*signing.SingleSignatureData).Signature = sig
-
 		err = tx.SetSignatures(sigs...)
 		if err != nil {
 			panic(err)

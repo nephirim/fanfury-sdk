@@ -12,11 +12,11 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	sdkslashing "github.com/cosmos/cosmos-sdk/x/slashing/types"
-	furyappparams "github.com/persistenceOne/persistence-sdk/v2/furyapp/params"
-	distrtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/distribution/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/simulation"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/slashing/types"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	furyappparams "github.com/incubus-network/fanfury-sdk/v2/app/params"
+	distrtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/distribution/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/simulation"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/slashing/types"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // TestSdkWeightedOperations tests the weights of the operations.

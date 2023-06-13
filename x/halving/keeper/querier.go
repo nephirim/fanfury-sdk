@@ -12,7 +12,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/persistenceOne/persistence-sdk/v2/x/halving/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/halving/types"
 )
 
 // NewQuerier returns a halving Querier handler.

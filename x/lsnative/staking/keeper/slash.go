@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/math"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkstaking "github.com/cosmos/cosmos-sdk/x/staking/types"
-	types "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	types "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 )
 
 // Slash a validator for an infraction committed at a known height

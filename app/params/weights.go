@@ -17,12 +17,19 @@ const (
 	DefaultWeightMsgDelegate                    int = 100
 	DefaultWeightMsgUndelegate                  int = 100
 	DefaultWeightMsgBeginRedelegate             int = 100
+	DefaultWeightMsgCancelUnbondingDelegation   int = 100
+
+	DefaultWeightMsgTokenizeShares                       int = 100
+	DefaultWeightMsgRedeemTokensforShares                int = 100
+	DefaultWeightMsgTransferTokenizeShareRecord          int = 50
+	DefaultWeightMsgWithdrawTokenizeShareRecordReward    int = 50
+	DefaultWeightMsgWithdrawAllTokenizeShareRecordReward int = 100
 
 	DefaultWeightCommunitySpendProposal int = 5
 	DefaultWeightTextProposal           int = 5
 	DefaultWeightParamChangeProposal    int = 5
 
 	// feegrant
-	DefaultWeightGrantFeeAllowance  int = 100
-	DefaultWeightRevokeFeeAllowance int = 100
+	DefaultWeightGrantAllowance  int = 100
+	DefaultWeightRevokeAllowance int = 100
 )

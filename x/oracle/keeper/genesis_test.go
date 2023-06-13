@@ -2,9 +2,9 @@ package keeper_test
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	furyapp "github.com/persistenceOne/persistence-sdk/v2/furyapp"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle"
-	"github.com/persistenceOne/persistence-sdk/v2/x/oracle/types"
+	furyapp "github.com/incubus-network/fanfury-sdk/v2/app"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle"
+	"github.com/incubus-network/fanfury-sdk/v2/x/oracle/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 

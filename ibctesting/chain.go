@@ -15,8 +15,8 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	capabilitykeeper "github.com/cosmos/cosmos-sdk/x/capability/keeper"
 	capabilitytypes "github.com/cosmos/cosmos-sdk/x/capability/types"
-	"github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/teststaking"
-	stakingtypes "github.com/persistenceOne/persistence-sdk/v2/x/lsnative/staking/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/teststaking"
+	stakingtypes "github.com/incubus-network/fanfury-sdk/v2/x/lsnative/staking/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/crypto/tmhash"
@@ -31,8 +31,8 @@ import (
 	"github.com/cosmos/ibc-go/v6/modules/core/exported"
 	"github.com/cosmos/ibc-go/v6/modules/core/types"
 	ibctmtypes "github.com/cosmos/ibc-go/v6/modules/light-clients/07-tendermint/types"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/furyapp"
-	"github.com/persistenceOne/persistence-sdk/v2/ibctesting/mock"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/furyapp"
+	"github.com/incubus-network/fanfury-sdk/v2/ibctesting/mock"
 )
 
 var MaxAccounts = 10

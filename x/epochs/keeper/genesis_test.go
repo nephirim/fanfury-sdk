@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	furyapp "github.com/persistenceOne/persistence-sdk/v2/furyapp"
+	furyapp "github.com/incubus-network/fanfury-sdk/v2/app"
 
-	"github.com/persistenceOne/persistence-sdk/v2/x/epochs/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/epochs/types"
 )
 
 func TestEpochsExportGenesis(t *testing.T) {

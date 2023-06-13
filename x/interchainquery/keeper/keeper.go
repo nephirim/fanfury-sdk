@@ -11,7 +11,7 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v6/modules/core/keeper"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/persistenceOne/persistence-sdk/v2/x/interchainquery/types"
+	"github.com/incubus-network/fanfury-sdk/v2/x/interchainquery/types"
 )
 
 // Keeper of this module maintains collections of registered zones.
